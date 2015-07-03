@@ -3,11 +3,16 @@ using System.Collections;
 
 public class PlayerMove : MonoBehaviour 
 {
+	private Rigidbody rigidbody;
+
+	void Start ()
+	{
+		rigidbody = GetComponent<Rigidbody>();
+	}
+
 	void Update ()
 	{
-		if (Input.GetButton("Jump"))
-		{
-
-		}
+		print (Input.GetAxis("Horizontal Player 1"));
+		rigidbody.AddForce (Vector3.forward * Input.GetAxis("Horizontal Player 1"));
 	}
 }
