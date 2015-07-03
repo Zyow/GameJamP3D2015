@@ -26,7 +26,7 @@ public class PlayerMove : MonoBehaviour
 
 	private void Jump ()
 	{
-		if ( jumped != null)
+		if (jumped != null)
 		{
 			jumped();
 		}
