@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerMove : MonoBehaviour 
+public class PlayerAction : MonoBehaviour 
 {
 	void Update ()
 	{
-		if (Input.GetButton("Jump"))
+		if (Input.GetButtonDown("Action"))
 		{
 
 		}
