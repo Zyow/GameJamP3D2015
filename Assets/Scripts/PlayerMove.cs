@@ -4,13 +4,15 @@ using System.Collections;
 
 public class PlayerMove : MonoBehaviour 
 {
-	private Rigidbody rigidbody;
-	private float speed;
 	public Action jumped;
+	private CharacterController characterController;
+	//private Rigidbody rigidbody;
+	private float speed;
 
 	void Start ()
 	{
-		rigidbody = GetComponent<Rigidbody>();
+		//rigidbody = GetComponent<Rigidbody>();
+		characterController = GetComponent<CharacterController>();
 	}
 
 	void Update ()
@@ -26,6 +28,11 @@ public class PlayerMove : MonoBehaviour
 
 	private void Jump ()
 	{
+		if (Input.GetButtonDown("Jump Player 1"))
+		{
+
+		}
+
 		if (jumped != null)
 		{
 			jumped();
