@@ -8,6 +8,10 @@ public class RuleBase : MonoBehaviour
 	public Action<int> winnerUI;
 	public bool done;
 
+	/// <summary>
+	/// Signaler si l'achievement est fini.
+	/// </summary>
+	/// <param name="player">numero du player.</param>
 	protected void Finished ( int player)
 	{
 		winner = player;
