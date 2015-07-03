@@ -9,7 +9,7 @@ public class PlayerStayXtime : RuleGetPlayerNbr
 	 void Start()
 	{
 		if ( FindObjectOfType<RuleStayXTime>())
-		InvokeRepeating("TimerUp,1f,1f");
+		InvokeRepeating("TimerUp",1f,1f);
 	}
 
 	public void TimerUp()
