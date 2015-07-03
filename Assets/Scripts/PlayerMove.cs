@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 
 public class PlayerMove : MonoBehaviour 
 {
 	private Rigidbody rigidbody;
 	private float speed;
+	public Action jumped;
 
 	void Start ()
 	{
@@ -20,5 +22,13 @@ public class PlayerMove : MonoBehaviour
 		print (Input.GetButtonDown("Action Player 1"));
 		//rigidbody.AddForce (Vector3.forward * Input.GetAxis("Horizontal Player 1"));
 		//rigidbody.velocity.x = Input.GetAxis("Horizontal Player 1");
+	}
+
+	private void Jump ()
+	{
+		if ( jumped != null)
+		{
+			jumped();
+		}
 	}
 }
