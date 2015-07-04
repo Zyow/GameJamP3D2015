@@ -25,7 +25,7 @@ public class PlayerMove : PlayerBase
 
 	void FixedUpdate ()
 	{
-		horizontalInputSpeed = Input.GetAxis("Horizontal Player " +playerString);
+		horizontalInputSpeed = Input.GetAxis("Horizontal Player "+playerString);
 
 		v3 = Vector3.forward * speed * horizontalInputSpeed;
 		v3.y = myRigidbody.velocity.y;

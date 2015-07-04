@@ -7,38 +7,38 @@ public class PlayerHit : PlayerBase
 
 	public Transform attackSpawnPointLeft;
 	public Transform attackSpawnPointRight;
-	public bool canAttack;
-
-	private GameObject attack;
+	private bool canAttack = true;
+	
 	private PlayerMove playerMove;
 
-	void Start ()
+	protected override void Awake ()
 	{
+		base.Awake();
 		playerMove = GetComponent<PlayerMove>();
+		attackPrefab.SetActive(false);
 	}
 
 	void Update ()
 	{
-		if (Input.GetButtonDown ("Hit Player "+ playerNbr.ToString ()))
-			Attack ();
+		if (Input.GetButtonDown ("Hit Player "+playerString))
+			StartCoroutine(Attack ());
 	}
 
-	private void Attack ()
+	private IEnumerator Attack ()
 	{
 		if (canAttack)
 		{
 			canAttack = false;
-			attack = Instantiate (attackPrefab) as GameObject;
+			attackPrefab.SetActive(true);
 			
-			if (playerMove.isMovingToTheRight)
-				attack.transform.SetParent (attackSpawnPointRight,false);
-			else
-				attack.transform.SetParent (attackSpawnPointLeft,false);
+//			if (playerMove.isMovingToTheRight)
+//				attack.transform.SetParent (attackSpawnPointRight,false);
+//			else
+//				attack.transform.SetParent (attackSpawnPointLeft,false);
 		}
-	}
-
-	public void CanAttackAgain ()
-	{
+		yield return new WaitForSeconds(0.2f);
+		attackPrefab.SetActive(false);
 		canAttack = true;
+		
 	}
 }
