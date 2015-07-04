@@ -23,7 +23,7 @@ public class HitCollider : MonoBehaviour
 
 		if (col.tag == "Cage")
 		{
-			col.GetComponent<Cage>().TakeHit();
+			col.GetComponentInParent<Cage>().TakeHit();
 		}
 	}
 }
