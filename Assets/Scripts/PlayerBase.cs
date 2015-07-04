@@ -8,7 +8,7 @@ public class PlayerBase : MonoBehaviour
 
 	protected virtual void Awake ()
 	{
-		switch (tag)
+		switch (transform.tag)
 		{
 		case "Player1" :
 			playerNbr = 1;

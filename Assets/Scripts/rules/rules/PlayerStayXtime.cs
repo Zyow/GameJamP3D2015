@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerStayXtime : RuleGetPlayerNbr 
+public class PlayerStayXtime : PlayerBase 
 {
 	private int time;
 	public int timeMax;

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerJumpXTime : RuleGetPlayerNbr 
+public class PlayerJumpXTime : PlayerBase 
 {
 	private bool isUsed ;
 	private int timeJumped;

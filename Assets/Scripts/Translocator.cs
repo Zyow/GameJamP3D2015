@@ -11,6 +11,7 @@ public class Translocator : MonoBehaviour
 		{
 			// Penser a orienter l'axe Y dans le sens inverse de là ou le player doit spawner
 			col.transform.position = new Vector3(otherDoor.transform.position.x, otherDoor.transform.position.y-1.2f, otherDoor.transform.position.z) ; 
+			col.GetComponent<PlayerPassByPortals>().PassedPortal();
 		}
 	}
 }
