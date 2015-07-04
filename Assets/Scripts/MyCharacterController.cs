@@ -21,7 +21,8 @@ public class MyCharacterController : MonoBehaviour
 		else
 		{
 			onTheGround = false;
-			hitTag(null);
+			if (hitTag != null)
+				hitTag(null);
 		}
 
 		RaycastHit frontHit;
