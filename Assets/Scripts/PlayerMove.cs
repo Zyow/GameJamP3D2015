@@ -31,13 +31,8 @@ public class PlayerMove : PlayerBase
 		v3 = Vector3.forward * speed * horizontalInputSpeed;
 		v3.y = myRigidbody.velocity.y;
 		myRigidbody.velocity = v3;
-<<<<<<< HEAD
 		
-		if (Input.GetButton("Jump Player "+playerString))
-=======
-
-		if (Input.GetButtonDown ("Jump Player "+ playerNbr.ToString ()))
->>>>>>> 2da925f2428318146ed58a7354adcc01201e4696
+		if (Input.GetButtonDown("Jump Player "+playerString))
 			Jump ();
 
 		if (horizontalInputSpeed < -0.1)
