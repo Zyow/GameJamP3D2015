@@ -6,6 +6,7 @@ public class PlayerMove : PlayerBase
 {
 	public Action jumped;
 	private PlayerState state = PlayerState.Moving;
+	private bool pushed;
 
 	public float speed;
 	public float jumpForce;
@@ -27,7 +28,7 @@ public class PlayerMove : PlayerBase
 	{
 		horizontalInputSpeed = Input.GetAxis("Horizontal Player "+playerString);
 
-		if(horizontalInputSpeed != 0)
+		if(horizontalInputSpeed != 0 && pushed == false)
 		{
 			v3 = Vector3.forward * speed * horizontalInputSpeed;
 			v3.y = myRigidbody.velocity.y;
@@ -55,6 +56,17 @@ public class PlayerMove : PlayerBase
 				jumped();
 			}
 		}
+	}
 
+	public void Pushed()
+	{
+		pushed = true;
+		CancelInvoke();
+		Invoke("UnPushed",1f);
+	}
+
+	public void UnPushed()
+	{
+		pushed = false;
 	}
 }
