@@ -3,14 +3,16 @@ using System.Collections;
 
 public class Pause : MonoBehaviour 
 {
-	public AudioSource audioSource;
 	public AudioClip pauseSFX;
 	public GameObject uiPause;
+
+	private AudioSource audioSource;
 	private bool isInPause;
 
-	void Start ()
+	void Awake ()
 	{
 		uiPause.SetActive (false);
+		audioSource = GetComponent<AudioSource>();
 	}
 
 	void Update ()
