@@ -5,6 +5,7 @@ public class MyCharacterController : MonoBehaviour
 {
 	private Vector3 offset = new Vector3(0f,-1f,0f);
 	public bool onTheGround;
+	private bool frontObject;
 	
 	// Update is called once per frame
 	void Update () 
@@ -16,6 +17,15 @@ public class MyCharacterController : MonoBehaviour
 		}
 		else
 			onTheGround = false;
+
+		RaycastHit frontHit;
+		if (Physics.SphereCast(transform.position, 0.5f, Vector3.forward, out frontHit, 0.75f))
+		{
+			frontObject = true;
+		}
+		else
+			frontObject = false;
+
 	}
 
 	public bool OnTheGround {
