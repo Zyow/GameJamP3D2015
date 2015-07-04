@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerFirstHit : MonoBehaviour 
+public class PlayerFirstHit : PlayerBase 
 {
 	private bool isUsed;
 	private int timeHit;
@@ -10,7 +10,7 @@ public class PlayerFirstHit : MonoBehaviour
 	{
 		if (FindObjectOfType<RuleFirstHit>())
 			isUsed = true;
-		GetComponent<PlayerHit>().hit += Hit;
+		//GetComponent<PlayerHit>().hit += Hit;
 	}
 
 	private void Hit ()
@@ -32,6 +32,6 @@ public class PlayerFirstHit : MonoBehaviour
 	public void Desactive ()
 	{
 		isUsed = false;
-		GetComponent<PlayerMove>().hit -= Hit;
+		//GetComponent<PlayerMove>().hit -= Hit;
 	}
 }
