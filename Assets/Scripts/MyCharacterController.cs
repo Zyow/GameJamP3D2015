@@ -7,7 +7,6 @@ public class MyCharacterController : MonoBehaviour
 	public bool onTheGround;
 	private bool frontObject;
 	
-	// Update is called once per frame
 	void Update () 
 	{
 		RaycastHit downHit;
