@@ -14,9 +14,9 @@ public class HitCollider : MonoBehaviour
 		if (col.tag == "Player1" || col.tag == "Player2" || col.tag == "Player3" || col.tag == "Player4" )
 		{
 //			print ("col");
-			col.GetComponent<Rigidbody>().AddForce(Vector3.up * ejectionForce, ForceMode.Impulse);
-			col.GetComponent<Rigidbody>().AddForce(transform.forward * ejectionForce*2f, ForceMode.Impulse);
-			col.GetComponent<PlayerMove>().Pushed();
+			col.GetComponentInParent<Rigidbody>().AddForce(Vector3.up * ejectionForce, ForceMode.Impulse);
+			col.GetComponentInParent<Rigidbody>().AddForce(transform.forward * ejectionForce*2f, ForceMode.Impulse);
+			col.GetComponentInParent<PlayerMove>().Pushed();
 			if(enemyHited != null)
 				enemyHited(col.tag);
 		}
