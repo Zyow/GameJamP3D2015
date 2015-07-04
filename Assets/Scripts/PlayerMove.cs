@@ -68,6 +68,7 @@ public class PlayerMove : PlayerBase
 
 	public void Pushed()
 	{
+		audioSource.PlayOneShot (pushedSFX);
 		pushed = true;
 		CancelInvoke();
 		Invoke("UnPushed",0.3f);
