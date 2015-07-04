@@ -39,22 +39,12 @@ public class PlayerMove : MonoBehaviour
 
 	void FixedUpdate ()
 	{
-		v3 = Vector3.forward * speed * Input.GetAxis("Horizontal Player " + playerNbr.ToString()); //* 50 * Time.fixedDeltaTime;
+		v3 = Vector3.forward * speed * Input.GetAxis("Horizontal Player " + playerNbr.ToString());
 		v3.y = myRigidbody.velocity.y;
 		myRigidbody.velocity = v3;
 
-		if (Input.GetButtonDown("Jump Player "+playerNbr.ToString()))
+		if (Input.GetButtonDown ("Jump Player "+ playerNbr.ToString ()))
 			Jump ();
-	}
-
-	private void Action ()
-	{
-		print ("action");
-	}
-
-	private void Hit ()
-	{
-		print ("hit");
 	}
 
 
