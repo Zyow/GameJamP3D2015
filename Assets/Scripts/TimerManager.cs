@@ -4,6 +4,9 @@ using System.Collections;
 
 public class TimerManager : MonoBehaviour 
 {
+	public Text textTimer;
+	public GameObject superRuleUI;
+
 	public float timerMax;
 
 	public float minSuperRuleDuration;
@@ -17,11 +20,9 @@ public class TimerManager : MonoBehaviour
 
 	public bool canCheat;
 	public bool isThereSuperRulesInTheGame;
-
+	
 	private float timerCurrent;
 	private float timerSuperRule;
-	private Text textTimer;
-	private GameObject superRuleUI;
 
 	private float currentSuperRuleDuration;
 	private float currentSuperRuleWaitingTime;
@@ -29,8 +30,8 @@ public class TimerManager : MonoBehaviour
 	void Start() 
 	{
 		timerCurrent = timerMax;
-		textTimer = transform.GetChild(0).GetChild(0).GetComponent<Text>();
-		superRuleUI = transform.GetChild(0).GetChild(1).gameObject;
+		//textTimer = transform.GetChild(0).GetChild(0).GetComponent<Text>();
+		//superRuleUI = transform.GetChild(0).GetChild(1).gameObject;
 		superRuleUI.SetActive (false);
 		ShowTimer ();
 	}
