@@ -4,9 +4,7 @@ using System.Collections;
 public class PlayerHit : PlayerBase 
 {
 	public GameObject attackPrefab;
-
-	public Transform attackSpawnPointLeft;
-	public Transform attackSpawnPointRight;
+	
 	private bool canAttack = true;
 	
 	private PlayerMove playerMove;
