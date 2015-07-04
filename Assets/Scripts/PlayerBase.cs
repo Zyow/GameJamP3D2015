@@ -5,9 +5,14 @@ public class PlayerBase : MonoBehaviour
 {
 	protected int playerNbr;
 	protected string playerString;
+	protected AudioSource audioSource;
+	//protected Animator animator;
 
 	protected virtual void Awake ()
 	{
+		audioSource = GetComponent<AudioSource>();
+		//animator = GetComponent<Animator>();
+
 		switch (transform.tag)
 		{
 		case "Player1" :
