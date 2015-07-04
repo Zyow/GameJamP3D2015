@@ -31,10 +31,7 @@ public class PlayerHit : PlayerBase
 			canAttack = false;
 			attackPrefab.SetActive(true);
 			
-//			if (playerMove.isMovingToTheRight)
-//				attack.transform.SetParent (attackSpawnPointRight,false);
-//			else
-//				attack.transform.SetParent (attackSpawnPointLeft,false);
+
 		}
 		yield return new WaitForSeconds(0.2f);
 		attackPrefab.SetActive(false);

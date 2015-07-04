@@ -14,7 +14,6 @@ public class PlayerMove : PlayerBase
 
 	private MyCharacterController myCharacterController;
 	private float horizontalInputSpeed;
-	public bool isMovingToTheRight = true;
 
 	protected override void Awake ()
 	{
