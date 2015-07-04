@@ -19,14 +19,13 @@ public class PlayerMove : PlayerBase
 	protected override void Awake ()
 	{
 		base.Awake ();
-
 		myRigidbody = GetComponent<Rigidbody>();
 		myCharacterController = GetComponent<MyCharacterController>();
 	}
 
 	void FixedUpdate ()
 	{
-		horizontalInputSpeed = Input.GetAxis("Horizontal Player " + playerNbr.ToString());
+		horizontalInputSpeed = Input.GetAxis("Horizontal Player " +playerString);
 
 		v3 = Vector3.forward * speed * horizontalInputSpeed;
 		v3.y = myRigidbody.velocity.y;
@@ -41,11 +40,12 @@ public class PlayerMove : PlayerBase
 			isMovingToTheRight = true;
 	}
 
-
 	private void Jump ()
 	{
-		if (myCharacterController.OnTheGround)
+		if (myCharacterController.onTheGround)
 		{
+			myCharacterController.onTheGround =false;
+			myRigidbody.velocity = new Vector3(myRigidbody.velocity.x,0f,myRigidbody.velocity.z);
 			myRigidbody.AddForce(Vector3.up*jumpForce,ForceMode.Impulse);
 			if (jumped != null)
 			{
