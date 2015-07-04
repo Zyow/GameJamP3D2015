@@ -5,6 +5,7 @@ using System.Collections;
 public class PlayerMove : PlayerBase 
 {
 	public Action jumped;
+	private PlayerState state = PlayerState.Moving;
 
 	public float speed;
 	public float jumpForce;
@@ -26,9 +27,12 @@ public class PlayerMove : PlayerBase
 	{
 		horizontalInputSpeed = Input.GetAxis("Horizontal Player "+playerString);
 
-		v3 = Vector3.forward * speed * horizontalInputSpeed;
-		v3.y = myRigidbody.velocity.y;
-		myRigidbody.velocity = v3;
+		if(horizontalInputSpeed != 0)
+		{
+			v3 = Vector3.forward * speed * horizontalInputSpeed;
+			v3.y = myRigidbody.velocity.y;
+			myRigidbody.velocity = v3;
+		}
 		
 		if (Input.GetButtonDown("Jump Player "+playerString))
 			Jump ();
