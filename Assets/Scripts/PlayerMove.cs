@@ -2,39 +2,24 @@
 using System;
 using System.Collections;
 
-public class PlayerMove : MonoBehaviour 
+public class PlayerMove : PlayerBase 
 {
 	public Action jumped;
 
 	public float speed;
 	public float jumpForce;
-	private int playerNbr;
 
 	private Rigidbody myRigidbody;
 	private Vector3 v3;
 
 	private MyCharacterController myCharacterController;
 
-	void Awake ()
+	protected override void Awake ()
 	{
+		base.Awake ();
+
 		myRigidbody = GetComponent<Rigidbody>();
 		myCharacterController = GetComponent<MyCharacterController>();
-
-		switch (tag)
-		{
-		case "Player1" :
-			playerNbr = 1;
-			break;
-		case "Player2" :
-			playerNbr = 2;
-			break;
-		case "Player3" :
-			playerNbr = 3;
-			break;
-		case "Player4" :
-			playerNbr = 4;
-			break;
-		}
 	}
 
 	void FixedUpdate ()
