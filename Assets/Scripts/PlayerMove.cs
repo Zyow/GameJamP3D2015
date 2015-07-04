@@ -33,7 +33,7 @@ public class PlayerMove : PlayerBase
 
 		if(horizontalInputSpeed != 0 && pushed == false)
 		{
-			v3 = Vector3.left * speed * horizontalInputSpeed;
+			v3 = Vector3.right * speed * horizontalInputSpeed;
 			v3.y = myRigidbody.velocity.y;
 			myRigidbody.velocity = v3;
 		}
@@ -42,9 +42,9 @@ public class PlayerMove : PlayerBase
 			Jump ();
 
 		if (horizontalInputSpeed < -0.1)
-			transform.rotation = Quaternion.Euler(0f,90f,0f);
-		else if (horizontalInputSpeed > 0.1)
 			transform.rotation = Quaternion.Euler(0f,-90f,0f);
+		else if (horizontalInputSpeed > 0.1)
+			transform.rotation = Quaternion.Euler(0f,90f,0f);
 
 		myRigidbody.AddForce(-Vector2.up * 50, ForceMode.Acceleration);
 
