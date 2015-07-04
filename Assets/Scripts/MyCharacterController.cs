@@ -4,14 +4,14 @@ using System.Collections;
 public class MyCharacterController : MonoBehaviour 
 {
 	private Vector3 offset = new Vector3(0f,-1f,0f);
-	private bool onTheGround;
+	public bool onTheGround;
 	
 	// Update is called once per frame
 	void Update () 
 	{
 		RaycastHit downHit;
-		if (Physics.Raycast(transform.position + offset, -Vector3.up, out downHit, 0.4f))
-		{			
+		if (Physics.Raycast(transform.position, -Vector3.up, out downHit, 1.4f))
+		{		
 			onTheGround = true;	
 		}
 		else
