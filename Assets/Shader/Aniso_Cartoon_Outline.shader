@@ -76,13 +76,15 @@
  		
  		float4 LightingRamp (SurfaceOutput s,float3 lightDir, float3 viewDir, half atten)
 		{
+			 half3 h = normalize (lightDir + viewDir);
 			float _Dot = ((dot(s.Normal,lightDir))+1)*0.5;
+			float nh = max (0, dot (s.Normal, h));
+			float spec = pow (nh, 48.0);
+			
 			float4 _ramplight = tex2D(_Ramp, float2(_Dot,_Dot)) ;
 			
-			float _speclight = tex2D(_SpecMap, float2(_Dot,_Dot)) * _Shininess;
-			
 			float4 c;
-			c.rgb = s.Albedo * _LightColor0.rgb * (_ramplight * _speclight * atten *2);
+			c.rgb = s.Albedo * _LightColor0.rgb * (_ramplight  * atten * 2) + clamp(((spec-_Shininess)/0.5) * s.Gloss,0.0,1.0)  ;
 			return c;
 		}
  		
@@ -102,10 +104,10 @@
 		void surf (Input IN, inout SurfaceOutput o) {
 			// Albedo comes from a texture tinted by color
 			fixed4 c = tex2D (_MainTex, IN.uv_MainTex);
-//			fixed4 specTex = tex2D(_SpecMap, IN.uv_SpecMap);
+			fixed4 specTex = tex2D(_SpecMap, IN.uv_SpecMap);
 
 			o.Albedo = c.rgb;
-// 			o.Gloss = specTex.r;
+ 			o.Gloss = specTex.r;
 // 			o.Specular = _Shininess * specTex.g;
 
 			// Metallic and smoothness come from slider variables
