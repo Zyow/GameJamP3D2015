@@ -12,7 +12,8 @@ public class PlayerAction : PlayerBase
 			other.GetComponent<Collectables>().Collected();
 			 if (other.tag == "Pills")
 			{
-//				GetComponent<PlayerGetPills>().GotIt();
+				if (GetComponent<PlayerGetPills>())
+					GetComponent<PlayerGetPills>().GotIt();
 				audioSource.PlayOneShot (collectableSFX);
 			}
 		}
