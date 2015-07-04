@@ -15,7 +15,7 @@ public class HitCollider : MonoBehaviour
 		{
 			print ("col");
 			col.GetComponent<Rigidbody>().AddForce(Vector3.up * ejectionForce, ForceMode.Impulse);
-			col.GetComponent<Rigidbody>().AddForce(Vector3.forward * ejectionForce*2f, ForceMode.Impulse);
+			col.GetComponent<Rigidbody>().AddForce(transform.forward * ejectionForce*2f, ForceMode.Impulse);
 			if(enemyHited != null)
 				enemyHited(col.tag);
 		}

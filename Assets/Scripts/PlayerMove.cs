@@ -35,9 +35,9 @@ public class PlayerMove : PlayerBase
 			Jump ();
 
 		if (horizontalInputSpeed < -0.1)
-			isMovingToTheRight = false;
+			transform.rotation = Quaternion.Euler(0f,180f,0f);
 		else if (horizontalInputSpeed > 0.1)
-			isMovingToTheRight = true;
+			transform.rotation = Quaternion.Euler(0f,0f,0f);
 	}
 
 	private void Jump ()
