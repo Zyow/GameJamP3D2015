@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Pause : MonoBehaviour 
 {
+	public AudioSource audioSource;
+	public AudioClip pauseSFX;
 	public GameObject uiPause;
 	private bool isInPause;
 
@@ -15,6 +17,7 @@ public class Pause : MonoBehaviour
 	{
 		if (Input.GetButtonDown("Pause"))
 		{
+			audioSource.PlayOneShot (pauseSFX);
 			isInPause = !isInPause;
 			if (isInPause)
 			{
