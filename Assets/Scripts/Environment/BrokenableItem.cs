@@ -4,16 +4,15 @@ using System.Collections;
 public class BrokenableItem : MonoBehaviour 
 {
 	public int life;
-	// Use this for initialization
-	void Start () 
-	{
-		
-	}
-	public void BreakingBad()
+
+	public void Damaged(string player)
 	{
 		life--;
+
 		if(life<=0)
 		{
+			Destroy(gameObject);
+			GetComponent<ItemBreak>().Breaking(player);
 			//Animation Destruction Object(Caisse/Bouteille/Cage)
 		}
 	}
