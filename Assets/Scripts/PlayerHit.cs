@@ -3,9 +3,13 @@ using System.Collections;
 
 public class PlayerHit : PlayerBase 
 {
-	public GameObject attack;
+	public GameObject attackPrefab;
+
 	public Transform attackSpawnPointLeft;
 	public Transform attackSpawnPointRight;
+	public bool canAttack;
+
+	private GameObject attack;
 	private PlayerMove playerMove;
 
 	void Start ()
@@ -21,10 +25,20 @@ public class PlayerHit : PlayerBase
 
 	private void Attack ()
 	{
-		print ("attack");
-		if (playerMove.isMovingToTheRight)
-			Instantiate (attack, attackSpawnPointRight.transform.position, attackSpawnPointRight.transform.rotation);
-		else
-			Instantiate (attack, attackSpawnPointLeft.transform.position, attackSpawnPointLeft.transform.rotation);
+		if (canAttack)
+		{
+			canAttack = false;
+			attack = Instantiate (attackPrefab) as GameObject;
+			
+			if (playerMove.isMovingToTheRight)
+				attack.transform.SetParent (attackSpawnPointRight,false);
+			else
+				attack.transform.SetParent (attackSpawnPointLeft,false);
+		}
+	}
+
+	public void CanAttackAgain ()
+	{
+		canAttack = true;
 	}
 }
