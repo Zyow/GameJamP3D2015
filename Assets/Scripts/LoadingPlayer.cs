@@ -16,8 +16,9 @@ public class LoadingPlayer : MonoBehaviour
 	{
 		if (playerOneActive)
 		{
+			//print ("Active Joueur 1");
 			//GameObject.FindGameObjectWithTag("Player1").SetActive(true);
-			Object playerOne = Resources.Load("PlayerFake");
+			Object playerOne = Resources.Load("Player 1");
 			if(GameObject.FindGameObjectWithTag("Player1")==null)
 			{
 				Instantiate(playerOne);
@@ -25,7 +26,8 @@ public class LoadingPlayer : MonoBehaviour
 		}
 		if (playerTwoActive)
 		{
-			Object playerTwo = Resources.Load("Player2");
+			//print ("Active Joueur 2");
+			Object playerTwo = Resources.Load("Player 2");
 			if(GameObject.FindGameObjectWithTag("Player2")==null)
 			{
 				Instantiate(playerTwo);
@@ -33,7 +35,8 @@ public class LoadingPlayer : MonoBehaviour
 		}
 		if (playerTreeActive)
 		{
-			Object playerTree = Resources.Load("Player3");
+			//print ("Active Joueur 3");
+			Object playerTree = Resources.Load("Player 3");
 			if(GameObject.FindGameObjectWithTag("Player3")==null)
 			{
 				Instantiate(playerTree);
@@ -41,7 +44,8 @@ public class LoadingPlayer : MonoBehaviour
 		}
 		if (playerFourActive)
 		{
-			Object playerFour = Resources.Load("Player4");
+			//print ("Active Joueur 4");
+			Object playerFour = Resources.Load("Player 4");
 			if(GameObject.FindGameObjectWithTag("Player4")==null)
 			{
 				Instantiate(playerFour);

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CharacterSelectionUI : MonoBehaviour 
 {
-	public GameObject loadingPlayerPrefab;
+	//public GameObject loadingPlayerPrefab;
 	public GameObject canLaunchGameUI;
 	public GameObject cantLaunchGameUI;
 
@@ -21,10 +21,13 @@ public class CharacterSelectionUI : MonoBehaviour
 	public GameObject textPlayer3Joined;
 	public GameObject textPlayer4Joined;
 
+	public int minPlayersNeed;
+
 	void Start ()
 	{
-		Instantiate (loadingPlayerPrefab);
-		loadingPlayer = loadingPlayerPrefab.GetComponent<LoadingPlayer>();
+		//Instantiate (loadingPlayerPrefab);
+		//loadingPlayer = loadingPlayerPrefab.GetComponent<LoadingPlayer>();
+		loadingPlayer = FindObjectOfType<LoadingPlayer>();
 		cantLaunchGameUI.SetActive (true);
 		canLaunchGameUI.SetActive (false);
 	}
@@ -44,16 +47,16 @@ public class CharacterSelectionUI : MonoBehaviour
 			ActivePlayer4 ();
 
 		if (Input.GetButtonDown ("Hit Player 1"))
-			ActivePlayer1 ();
+			DesactivePlayer1 ();
 		
 		if (Input.GetButtonDown ("Hit Player 2"))
-			ActivePlayer2 ();
+			DesactivePlayer2 ();
 		
 		if (Input.GetButtonDown ("Hit Player 3"))
-			ActivePlayer3 ();
+			DesactivePlayer3 ();
 		
 		if (Input.GetButtonDown ("Hit Player 4"))
-			ActivePlayer4 ();
+			DesactivePlayer4 ();
 
 		if (Input.GetButtonDown ("Pause") && canLaunchGame)
 		{
@@ -64,7 +67,7 @@ public class CharacterSelectionUI : MonoBehaviour
 
 	private void CheckNumberPlayers ()
 	{
-		if (numberActivePlayers >= 2)
+		if (numberActivePlayers >= minPlayersNeed)
 		{
 			canLaunchGame = true;
 			cantLaunchGameUI.SetActive (false);
