@@ -7,7 +7,6 @@ public class PlayerMove : MonoBehaviour
 	public Action jumped;
 
 	public float speed;
-	private bool doJump;
 	public float jumpForce;
 	private int playerNbr;
 
@@ -20,6 +19,7 @@ public class PlayerMove : MonoBehaviour
 	{
 		myRigidbody = GetComponent<Rigidbody>();
 		myCharacterController = GetComponent<MyCharacterController>();
+
 		switch (tag)
 		{
 		case "Player1" :
@@ -36,17 +36,13 @@ public class PlayerMove : MonoBehaviour
 			break;
 		}
 	}
-//	void Update()
-//	{
-//		if (Input.GetButtonDown("Jump Player "+playerNbr.ToString()))
-//			Jump ();
-//	}
+
 	void FixedUpdate ()
 	{
 		v3 = Vector3.forward * speed * Input.GetAxis("Horizontal Player " + playerNbr.ToString()); //* 50 * Time.fixedDeltaTime;
-//		v3P1 = v3 * Input.GetAxis("Horizontal Player 1");
 		v3.y = myRigidbody.velocity.y;
 		myRigidbody.velocity = v3;
+
 		if (Input.GetButtonDown("Jump Player "+playerNbr.ToString()))
 			Jump ();
 	}
@@ -66,7 +62,6 @@ public class PlayerMove : MonoBehaviour
 	{
 		if (myCharacterController.OnTheGround)
 		{
-//			doJump = true;
 			myRigidbody.AddForce(Vector3.up*jumpForce,ForceMode.Impulse);
 			if (jumped != null)
 			{

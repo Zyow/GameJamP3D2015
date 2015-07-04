@@ -19,7 +19,6 @@ public class PlayerStayXtime : RuleGetPlayerNbr
 	}
 	void Update()
 	{
-		print(myRigibody.velocity.z);
 		if (isUsed)
 		{
 			if (myRigibody.velocity.z >= 0.1 || myRigibody.velocity.z <= -0.1)

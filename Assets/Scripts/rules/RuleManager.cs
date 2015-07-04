@@ -10,11 +10,9 @@ public class RuleManager : MonoBehaviour
 	void Awake()
 	{
 		rules = new List<RuleBase>(Resources.LoadAll<RuleBase>("Rules"));
-		print ("lol");
 		foreach ( Transform pos in posUI)
 		{
 			int rdm = Random.Range(0,rules.Count);
-			print (rules[rdm]);
 			RuleBase clone = Instantiate(rules[rdm],pos.position,pos.rotation) as RuleBase;
 			rules.RemoveAt(rdm);
 			clone.GetComponent<RectTransform>().SetParent(pos);
