@@ -28,7 +28,6 @@ public class PlayerHit : PlayerBase
 		{
 			canAttack = false;
 			attackPrefab.SetActive(true);
-			
 
 		}
 		yield return new WaitForSeconds(0.2f);

@@ -1,30 +1,44 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerXHits : PlayerBase 
 {
-	public int maxXTimesHit;
+	public int timeHitedObjectif;
+	public HitCollider hitCollider;
 	private bool isUsed;
 	private int currentXTimesHit;
+	private Dictionary<string,int> playerTouch = new Dictionary<string, int>();
 	
 	void Start ()
 	{
 		if (FindObjectOfType<RuleXHits>())
 			isUsed = true;
-		//GetComponent<HitCollider>().hitGiver += HitGiver;
+		hitCollider.enemyHited += HitGived;
+
+		playerTouch.Add("Player1",0);
+		playerTouch.Add("Player2",0);
+		playerTouch.Add("Player3",0);
+		playerTouch.Add("Player4",0);
 	}
 
-	private void HitGiver ()
+	private void HitGived (string target)
 	{
-		currentXTimesHit ++;
-		if (isUsed == true && currentXTimesHit >= maxXTimesHit)
+		print (target);
+		print(playerTouch[target]);
+
+		if (isUsed)
 		{
-			FindObjectOfType<RuleXHits>().Done(playerNbr);
-			
-			PlayerXHits[] players = FindObjectsOfType<PlayerXHits>();
-			foreach ( PlayerXHits player in players)
+			playerTouch[target] ++;
+			if (playerTouch[target] >= timeHitedObjectif)
 			{
-				player.GetComponent<PlayerXHits>().Desactive();
+				FindObjectOfType<RuleXHits>().Done(playerNbr);
+				
+				PlayerXHits[] players = FindObjectsOfType<PlayerXHits>();
+				foreach ( PlayerXHits player in players)
+				{
+					player.GetComponent<PlayerXHits>().Desactive();
+				}
 			}
 		}
 	}

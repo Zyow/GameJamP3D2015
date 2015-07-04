@@ -5,6 +5,7 @@ public class PlayerGetPills : PlayerBase
 {
 	public void GotIt ()
 	{
-		FindObjectOfType<RuleGetPills>().Done(playerNbr);
+		if (FindObjectOfType<RuleGetPills>())
+			FindObjectOfType<RuleGetPills>().Done(playerNbr);
 	}
 }
