@@ -51,7 +51,7 @@ public class PlayerMove : PlayerBase
 		v3.y = myRigidbody.velocity.y;
 		myRigidbody.velocity = v3;
 		
-		if (Input.GetButtonDown ("Jump Player "+playerString))
+		if (Input.GetButton("Jump Player "+playerString))
 			Jump ();
 	}
 	
