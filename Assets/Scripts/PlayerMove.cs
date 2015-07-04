@@ -35,13 +35,16 @@ public class PlayerMove : PlayerBase
 			myRigidbody.velocity = v3;
 		}
 		
-		if (Input.GetButtonDown("Jump Player "+playerString))
+		if (Input.GetButton("Jump Player "+playerString))
 			Jump ();
 
 		if (horizontalInputSpeed < -0.1)
 			transform.rotation = Quaternion.Euler(0f,180f,0f);
 		else if (horizontalInputSpeed > 0.1)
 			transform.rotation = Quaternion.Euler(0f,0f,0f);
+
+		myRigidbody.AddForce(-Vector2.up * 50, ForceMode.Acceleration);
+
 	}
 
 	private void Jump ()
@@ -62,7 +65,7 @@ public class PlayerMove : PlayerBase
 	{
 		pushed = true;
 		CancelInvoke();
-		Invoke("UnPushed",1f);
+		Invoke("UnPushed",0.3f);
 	}
 
 	public void UnPushed()

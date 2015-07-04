@@ -6,7 +6,7 @@ public class HitCollider : MonoBehaviour
 {
 	public Action<string> enemyHited;
 
-	private float ejectionForce = 3f;
+	private float ejectionForce = 8f;
 
 
 	void OnTriggerEnter(Collider col)
