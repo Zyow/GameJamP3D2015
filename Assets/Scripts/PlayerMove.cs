@@ -13,6 +13,8 @@ public class PlayerMove : PlayerBase
 	private Vector3 v3;
 
 	private MyCharacterController myCharacterController;
+	private float horizontalInputSpeed;
+	public bool isMovingToTheRight = true;
 
 	protected override void Awake ()
 	{
@@ -24,12 +26,19 @@ public class PlayerMove : PlayerBase
 
 	void FixedUpdate ()
 	{
-		v3 = Vector3.forward * speed * Input.GetAxis("Horizontal Player " + playerNbr.ToString());
+		horizontalInputSpeed = Input.GetAxis("Horizontal Player " + playerNbr.ToString());
+
+		v3 = Vector3.forward * speed * horizontalInputSpeed;
 		v3.y = myRigidbody.velocity.y;
 		myRigidbody.velocity = v3;
 
 		if (Input.GetButtonDown ("Jump Player "+ playerNbr.ToString ()))
 			Jump ();
+
+		if (horizontalInputSpeed < -0.1)
+			isMovingToTheRight = false;
+		else if (horizontalInputSpeed > 0.1)
+			isMovingToTheRight = true;
 	}
 
 
