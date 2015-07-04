@@ -4,7 +4,6 @@ using System.Collections;
 public class PlayerXHits : PlayerBase 
 {
 	public int maxXTimesHit;
-
 	private bool isUsed;
 	private int currentXTimesHit;
 	
@@ -12,10 +11,10 @@ public class PlayerXHits : PlayerBase
 	{
 		if (FindObjectOfType<RuleXHits>())
 			isUsed = true;
-		//GetComponent<PlayerHit>().hit += Hit;
+		//GetComponent<HitCollider>().hitGiver += HitGiver;
 	}
 
-	private void Hit ()
+	private void HitGiver ()
 	{
 		currentXTimesHit ++;
 		if (isUsed == true && currentXTimesHit >= maxXTimesHit)
@@ -33,6 +32,6 @@ public class PlayerXHits : PlayerBase
 	public void Desactive ()
 	{
 		isUsed = false;
-		//GetComponent<PlayerHit>().hit -= Hit;
+		//GetComponent<HitCollider>().hitGiver -= HitGiver;
 	}
 }
