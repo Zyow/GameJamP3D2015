@@ -32,6 +32,7 @@ public class TimerManager : MonoBehaviour
 		timerCurrent = timerMax;
 		//textTimer = transform.GetChild(0).GetChild(0).GetComponent<Text>();
 		//superRuleUI = transform.GetChild(0).GetChild(1).gameObject;
+		textTimer.enabled = false;
 		superRuleUI.SetActive (false);
 		ShowTimer ();
 	}
@@ -95,6 +96,7 @@ public class TimerManager : MonoBehaviour
 
 	public void StartTimer ()
 	{
+		textTimer.enabled = true;
 		isASuperRuleIsActive = false;
 		superRuleUI.SetActive (isASuperRuleIsActive);
 		StartCoroutine(TimerUI(timeRefreshTimer));

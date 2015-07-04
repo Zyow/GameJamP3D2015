@@ -7,7 +7,7 @@ public class Pause : MonoBehaviour
 	public GameObject uiPause;
 
 	private AudioSource audioSource;
-	private bool isInPause;
+	public bool isInPause;
 
 	void Awake ()
 	{
