@@ -2,71 +2,61 @@
 using System;
 using System.Collections;
 
-using System;
-using System.Collections;
-
 public class PlayerMove : PlayerBase 
 {
 	public Action jumped;
-	
+
 	public float speed;
 	public float jumpForce;
-	
+
 	private Rigidbody myRigidbody;
 	private Vector3 v3;
-	private string playerString;
-	
+
 	private MyCharacterController myCharacterController;
-	
+	private float horizontalInputSpeed;
+	public bool isMovingToTheRight = true;
+
 	protected override void Awake ()
 	{
 		base.Awake ();
-		
+
 		myRigidbody = GetComponent<Rigidbody>();
 		myCharacterController = GetComponent<MyCharacterController>();
-		switch (tag)
-		{
-		case "Player1" :
-			playerNbr = 1;
-			playerString=playerNbr.ToString();
-			break;
-		case "Player2" :
-			playerNbr = 2;
-			playerString=playerNbr.ToString();
-			break;
-		case "Player3" :
-			playerNbr = 3;
-			playerString=playerNbr.ToString();
-			break;
-		case "Player4" :
-			playerNbr = 4;
-			playerString=playerNbr.ToString();
-			break;
-		}
 	}
-	
+
 	void FixedUpdate ()
 	{
-		v3 = Vector3.forward * speed * Input.GetAxis("Horizontal Player " + playerNbr.ToString());
+		horizontalInputSpeed = Input.GetAxis("Horizontal Player " + playerNbr.ToString());
+
+		v3 = Vector3.forward * speed * horizontalInputSpeed;
 		v3.y = myRigidbody.velocity.y;
 		myRigidbody.velocity = v3;
+<<<<<<< HEAD
 		
 		if (Input.GetButton("Jump Player "+playerString))
+=======
+
+		if (Input.GetButtonDown ("Jump Player "+ playerNbr.ToString ()))
+>>>>>>> 2da925f2428318146ed58a7354adcc01201e4696
 			Jump ();
+
+		if (horizontalInputSpeed < -0.1)
+			isMovingToTheRight = false;
+		else if (horizontalInputSpeed > 0.1)
+			isMovingToTheRight = true;
 	}
-	
-	
+
+
 	private void Jump ()
 	{
-		if (myCharacterController.onTheGround)
+		if (myCharacterController.OnTheGround)
 		{
-			myRigidbody.velocity= new Vector3(myRigidbody.velocity.x,0f,myRigidbody.velocity.z);
 			myRigidbody.AddForce(Vector3.up*jumpForce,ForceMode.Impulse);
 			if (jumped != null)
 			{
 				jumped();
 			}
 		}
-		
+
 	}
 }
