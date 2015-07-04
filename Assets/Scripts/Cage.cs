@@ -8,9 +8,9 @@ public class Cage : MonoBehaviour
 	public void TakeHit(Transform player)
 	{
 		life --;
-		if (life == 0)
+		if (life <= 0)
 		{
-			Destroy(gameObject);
+//			Destroy(gameObject);
 			GetComponent<CageBreak>().Breaking(player.GetComponentInParent<Transform>().tag);
 		}
 	}

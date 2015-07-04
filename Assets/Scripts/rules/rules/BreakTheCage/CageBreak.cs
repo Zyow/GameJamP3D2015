@@ -16,7 +16,7 @@ public class CageBreak : MonoBehaviour
 	{
 		if (isUsed)
 		{
-			int playerNbr;
+			int playerNbr = 0;
 			switch (player)
 			{
 			case "Player1" :
