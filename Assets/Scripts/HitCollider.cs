@@ -21,5 +21,9 @@ public class HitCollider : MonoBehaviour
 				enemyHited(col.tag);
 		}
 
+		if (col.tag == "Cage")
+		{
+			col.GetComponent<Cage>().TakeHit();
+		}
 	}
 }
