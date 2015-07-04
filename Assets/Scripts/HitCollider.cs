@@ -21,9 +21,10 @@ public class HitCollider : MonoBehaviour
 				enemyHited(col.tag);
 		}
 
-		if (col.tag == "Cage")
+		if (col.tag == "Damageable")
 		{
-			col.GetComponentInParent<Cage>().TakeHit(transform);
+			if (col.GetComponentInParent<Cage>())
+				col.GetComponentInParent<Cage>().TakeHit(transform.parent.tag);
 		}
 	}
 }
