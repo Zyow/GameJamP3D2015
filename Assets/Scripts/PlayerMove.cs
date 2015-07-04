@@ -11,6 +11,9 @@ public class PlayerMove : PlayerBase
 	public float speed;
 	public float jumpForce;
 
+	public AudioClip jumpSFX;
+	public AudioClip pushedSFX;
+
 	private Rigidbody myRigidbody;
 	private Vector3 v3;
 
@@ -54,6 +57,8 @@ public class PlayerMove : PlayerBase
 			myCharacterController.onTheGround =false;
 			myRigidbody.velocity = new Vector3(myRigidbody.velocity.x,0f,myRigidbody.velocity.z);
 			myRigidbody.AddForce(Vector3.up*jumpForce,ForceMode.Impulse);
+			audioSource.PlayOneShot (jumpSFX);
+
 			if (jumped != null)
 			{
 				jumped();
