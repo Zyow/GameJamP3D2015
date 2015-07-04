@@ -5,27 +5,38 @@ public class PlayerJumpXTimeOnBed : PlayerBase
 {
 	private bool isUsed;
 	private int timeJumped;
+	private string floorTag;
+	public int jumpNbr;
 
 	void Start ()
 	{
-		if (FindObjectOfType<RuleJumpXTime>())
+		if (FindObjectOfType<RuleJumpXTimeOnBed>())
 			isUsed = true;
-		//GetComponent<PlayerMove>().jumpedOnBed += JumpingOnBed;
+		GetComponent<PlayerMove>().jumped += Jumping;
+		GetComponent<MyCharacterController>().hitTag += ChangeTag;
 	}
 	
-	private void JumpingOnBed ()
+	private void Jumping ()
 	{
-		timeJumped ++;
-		if (isUsed == true && timeJumped >= 10)
+		if(isUsed && floorTag == "Bed")
 		{
-			FindObjectOfType<RuleJumpXTime>().Done(playerNbr);
-			
-			PlayerJumpXTimeOnBed[] players = FindObjectsOfType<PlayerJumpXTimeOnBed>();
-			foreach ( PlayerJumpXTimeOnBed player in players)
+			timeJumped ++;
+			if (timeJumped >= jumpNbr)
 			{
-				player.GetComponent<PlayerJumpXTimeOnBed>().Desactive();
+				FindObjectOfType<RuleJumpXTimeOnBed>().Done(playerNbr);
+				
+				PlayerJumpXTimeOnBed[] players = FindObjectsOfType<PlayerJumpXTimeOnBed>();
+				foreach ( PlayerJumpXTimeOnBed player in players)
+				{
+					player.GetComponent<PlayerJumpXTimeOnBed>().Desactive();
+				}
 			}
 		}
+	}
+
+	private void ChangeTag(string tag)
+	{
+		floorTag = tag;
 	}
 	
 	public void Desactive ()
