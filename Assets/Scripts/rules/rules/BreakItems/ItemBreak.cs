@@ -32,7 +32,7 @@ public class ItemBreak : MonoBehaviour
 				break;
 			}
 
-			FindObjectOfType<BrokenableSpawner>().Broken(playerNbr,transform.parent.transform);			
+			GetComponentInParent<BrokenableSpawner>().Broken(playerNbr,transform);			
 		}
 	}
 }

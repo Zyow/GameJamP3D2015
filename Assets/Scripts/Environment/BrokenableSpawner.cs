@@ -5,7 +5,6 @@ using System.Collections.Generic;
 public class BrokenableSpawner : MonoBehaviour 
 {
 	public BrokenableItem prefabBreakable;
-	public Transform spawnPointPrefab;
 	public List<Transform> pos;
 	public int nbrDestroy;
 	private Dictionary<Transform,bool> used = new Dictionary<Transform, bool>();
@@ -13,12 +12,14 @@ public class BrokenableSpawner : MonoBehaviour
 
 	void Start()
 	{
-		Transform truc = Instantiate(spawnPointPrefab) as Transform;
-		pos = new List<Transform>(truc.GetComponentsInChildren<Transform>());
-
+		pos = new List<Transform>(GetComponentsInChildren<Transform>());
 		for ( int i = 0; i < pos.Count;i++ )
 		{
 			used.Add(pos[i],false);
+		}
+		for (int j = 1; j < 5 ; j++)
+		{
+			playersScore.Add(j,0);
 		}
 		SpawnItem();
 		StartCoroutine(Spawnwave());
@@ -26,12 +27,12 @@ public class BrokenableSpawner : MonoBehaviour
 
 	private IEnumerator Spawnwave()
 	{
-		if (true)
+		while (true)
 		{
-			SpawnItem();			
+			SpawnItem();	
+			print ("time to spawn");
+			yield return new WaitForSeconds(5f);
 		}
-		yield return new WaitForSeconds(5f);
-		
 	}
 
 	private void SpawnItem()
@@ -50,7 +51,6 @@ public class BrokenableSpawner : MonoBehaviour
 	public void Broken( int player, Transform spawn)
 	{
 		used[spawn] = false;
-		print ("lol");
 		playersScore[player] ++;
 		if(playersScore[player] > nbrDestroy)
 		{

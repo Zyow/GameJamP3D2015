@@ -12,7 +12,7 @@ public class BrokenableItem : MonoBehaviour
 		if(life<=0)
 		{
 			Destroy(gameObject);
-			GetComponent<ItemBreak>().Breaking(player);
+			GetComponentInParent<ItemBreak>().Breaking(player);
 			//Animation Destruction Object(Caisse/Bouteille/Cage)
 		}
 	}
