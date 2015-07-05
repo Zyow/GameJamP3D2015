@@ -1,0 +1,279 @@
+fileFormatVersion: 2
+guid: faa638cb0751d5a44977d2069498f080
+timeCreated: 1436106628
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: cube004
+    100002: cube005
+    100004: cylinder
+    100006: DYNAMACBONES_Cravache_002
+    100008: DYNAMACBONES_Cravache_003
+    100010: DYNAMACBONES_Cravache_004
+    100012: //RootNode
+    100014: HIDE_FK_BIP_001
+    100016: HIDE_FK_Calf_L
+    100018: HIDE_FK_Calf_R
+    100020: HIDE_FK_Clavicle_L
+    100022: HIDE_FK_Clavicle_R
+    100024: HIDE_FK_Finger_01_L
+    100026: HIDE_FK_Finger_01_R
+    100028: HIDE_FK_Finger_02_L
+    100030: HIDE_FK_Finger_02_R
+    100032: HIDE_FK_ForeArm_L
+    100034: HIDE_FK_ForeArm_R
+    100036: HIDE_FK_Hand_L
+    100038: HIDE_FK_Hand_R
+    100040: HIDE_FK_Head
+    100042: HIDE_FK_Neck
+    100044: HIDE_FK_Pelvis
+    100046: HIDE_FK_Spine_002
+    100048: HIDE_FK_Spine_003
+    100050: HIDE_FK_Spine_01
+    100052: HIDE_FK_Thigh_L
+    100054: HIDE_FK_Thigh_R
+    100056: HIDE_FK_Thumb_01_L
+    100058: HIDE_FK_Thumb_01_R
+    100060: HIDE_FK_Thumb_02_L
+    100062: HIDE_FK_Thumb_02_R
+    100064: HIDE_FK_UpperArm_L
+    100066: HIDE_FK_UpperArm_R
+    100068: Object002
+    100070: polymsh
+    100072: polymsh001
+    100074: polymsh002
+    100076: polymsh006
+    100078: polymsh3
+    100080: WeaponLink
+    400000: cube004
+    400002: cube005
+    400004: cylinder
+    400006: DYNAMACBONES_Cravache_002
+    400008: DYNAMACBONES_Cravache_003
+    400010: DYNAMACBONES_Cravache_004
+    400012: //RootNode
+    400014: HIDE_FK_BIP_001
+    400016: HIDE_FK_Calf_L
+    400018: HIDE_FK_Calf_R
+    400020: HIDE_FK_Clavicle_L
+    400022: HIDE_FK_Clavicle_R
+    400024: HIDE_FK_Finger_01_L
+    400026: HIDE_FK_Finger_01_R
+    400028: HIDE_FK_Finger_02_L
+    400030: HIDE_FK_Finger_02_R
+    400032: HIDE_FK_ForeArm_L
+    400034: HIDE_FK_ForeArm_R
+    400036: HIDE_FK_Hand_L
+    400038: HIDE_FK_Hand_R
+    400040: HIDE_FK_Head
+    400042: HIDE_FK_Neck
+    400044: HIDE_FK_Pelvis
+    400046: HIDE_FK_Spine_002
+    400048: HIDE_FK_Spine_003
+    400050: HIDE_FK_Spine_01
+    400052: HIDE_FK_Thigh_L
+    400054: HIDE_FK_Thigh_R
+    400056: HIDE_FK_Thumb_01_L
+    400058: HIDE_FK_Thumb_01_R
+    400060: HIDE_FK_Thumb_02_L
+    400062: HIDE_FK_Thumb_02_R
+    400064: HIDE_FK_UpperArm_L
+    400066: HIDE_FK_UpperArm_R
+    400068: Object002
+    400070: polymsh
+    400072: polymsh001
+    400074: polymsh002
+    400076: polymsh006
+    400078: polymsh3
+    400080: WeaponLink
+    4300000: Object002
+    4300002: polymsh006
+    4300004: cylinder
+    4300006: polymsh3
+    4300008: polymsh001
+    4300010: cube004
+    4300012: cube005
+    4300014: polymsh
+    4300016: polymsh002
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: cube004
+    13700002: cube005
+    13700004: cylinder
+    13700006: Object002
+    13700008: polymsh
+    13700010: polymsh001
+    13700012: polymsh002
+    13700014: polymsh006
+    13700016: polymsh3
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 49
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: cylinder
+        weight: 1
+      - path: HIDE_FK_BIP_001
+        weight: 1
+      - path: HIDE_FK_Calf_L
+        weight: 1
+      - path: HIDE_FK_Calf_R
+        weight: 1
+      - path: HIDE_FK_Clavicle_L
+        weight: 1
+      - path: HIDE_FK_Clavicle_R
+        weight: 1
+      - path: HIDE_FK_Finger_01_L
+        weight: 1
+      - path: HIDE_FK_Finger_01_R
+        weight: 1
+      - path: HIDE_FK_Finger_02_L
+        weight: 1
+      - path: HIDE_FK_Finger_02_R
+        weight: 1
+      - path: HIDE_FK_ForeArm_L
+        weight: 1
+      - path: HIDE_FK_ForeArm_R
+        weight: 1
+      - path: HIDE_FK_Hand_L
+        weight: 1
+      - path: HIDE_FK_Hand_L/WeaponLink
+        weight: 1
+      - path: HIDE_FK_Hand_L/WeaponLink/DYNAMACBONES_Cravache_002
+        weight: 1
+      - path: HIDE_FK_Hand_L/WeaponLink/DYNAMACBONES_Cravache_002/DYNAMACBONES_Cravache_003
+        weight: 1
+      - path: HIDE_FK_Hand_L/WeaponLink/DYNAMACBONES_Cravache_002/DYNAMACBONES_Cravache_003/DYNAMACBONES_Cravache_004
+        weight: 1
+      - path: HIDE_FK_Hand_L/WeaponLink/Object002
+        weight: 1
+      - path: HIDE_FK_Hand_R
+        weight: 1
+      - path: HIDE_FK_Head
+        weight: 1
+      - path: HIDE_FK_Neck
+        weight: 1
+      - path: HIDE_FK_Pelvis
+        weight: 1
+      - path: HIDE_FK_Spine_01
+        weight: 1
+      - path: HIDE_FK_Spine_002
+        weight: 1
+      - path: HIDE_FK_Spine_003
+        weight: 1
+      - path: HIDE_FK_Thigh_L
+        weight: 1
+      - path: HIDE_FK_Thigh_R
+        weight: 1
+      - path: HIDE_FK_Thumb_01_L
+        weight: 1
+      - path: HIDE_FK_Thumb_01_R
+        weight: 1
+      - path: HIDE_FK_Thumb_02_L
+        weight: 1
+      - path: HIDE_FK_Thumb_02_R
+        weight: 1
+      - path: HIDE_FK_UpperArm_L
+        weight: 1
+      - path: HIDE_FK_UpperArm_R
+        weight: 1
+      - path: polymsh
+        weight: 1
+      - path: polymsh002
+        weight: 1
+      - path: polymsh3
+        weight: 1
+      - path: polymsh3/cube004
+        weight: 1
+      - path: polymsh3/cube005
+        weight: 1
+      - path: polymsh3/polymsh001
+        weight: 1
+      - path: polymsh006
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1.14999998
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

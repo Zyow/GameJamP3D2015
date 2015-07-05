@@ -1,0 +1,207 @@
+fileFormatVersion: 2
+guid: 66a61177b4d7f1944b5c62d0b2d5cdfd
+timeCreated: 1436106628
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: BaseLiane
+    100002: BaseLiane001
+    100004: BaseLiane002
+    100006: BaseLiane003
+    100008: BaseLiane004
+    100010: BaseRope
+    100012: BaseRope001
+    100014: BaseRope002
+    100016: BaseRope003
+    100018: BaseRope004
+    100020: //RootNode
+    100022: FouetDiablotin001
+    100024: HIDE_FK_BIP_001
+    100026: HIDE_FK_Boobs_L
+    100028: HIDE_FK_Boobs_R
+    100030: HIDE_FK_Calf_L
+    100032: HIDE_FK_Calf_R
+    100034: HIDE_FK_Clavicle_L
+    100036: HIDE_FK_Clavicle_R
+    100038: HIDE_FK_Finger_01_L
+    100040: HIDE_FK_Finger_01_R
+    100042: HIDE_FK_Finger_02_L
+    100044: HIDE_FK_Finger_02_R
+    100046: HIDE_FK_ForeArm_L
+    100048: HIDE_FK_ForeArm_R
+    100050: HIDE_FK_Hand_L
+    100052: HIDE_FK_Hand_R
+    100054: HIDE_FK_Head
+    100056: HIDE_FK_Neck
+    100058: HIDE_FK_Pelvis
+    100060: HIDE_FK_Spine_002
+    100062: HIDE_FK_Spine_003
+    100064: HIDE_FK_Spine_01
+    100066: HIDE_FK_Tail_001
+    100068: HIDE_FK_Tail_002
+    100070: HIDE_FK_Tail_003
+    100072: HIDE_FK_Tail_004
+    100074: HIDE_FK_Tail_005
+    100076: HIDE_FK_Tail_006
+    100078: HIDE_FK_Thigh_L
+    100080: HIDE_FK_Thigh_R
+    100082: HIDE_FK_Thumb_01_L
+    100084: HIDE_FK_Thumb_01_R
+    100086: HIDE_FK_Thumb_02_L
+    100088: HIDE_FK_Thumb_02_R
+    100090: HIDE_FK_UpperArm_L
+    100092: HIDE_FK_UpperArm_R
+    100094: HIDE_FK_Weapon
+    100096: Liane001
+    100098: Liane002
+    100100: Liane003
+    100102: Liane004
+    100104: Liane005
+    100106: Liane006
+    100108: Liane007
+    100110: Liane008
+    100112: Liane009
+    100114: Liane010
+    100116: Liane011
+    100118: Liane012
+    100120: Liane013
+    100122: Liane014
+    100124: Liane015
+    100126: Liane016
+    100128: Liane017
+    100130: Liane018
+    100132: Liane019
+    100134: Liane020
+    400000: BaseLiane
+    400002: BaseLiane001
+    400004: BaseLiane002
+    400006: BaseLiane003
+    400008: BaseLiane004
+    400010: BaseRope
+    400012: BaseRope001
+    400014: BaseRope002
+    400016: BaseRope003
+    400018: BaseRope004
+    400020: //RootNode
+    400022: FouetDiablotin001
+    400024: HIDE_FK_BIP_001
+    400026: HIDE_FK_Boobs_L
+    400028: HIDE_FK_Boobs_R
+    400030: HIDE_FK_Calf_L
+    400032: HIDE_FK_Calf_R
+    400034: HIDE_FK_Clavicle_L
+    400036: HIDE_FK_Clavicle_R
+    400038: HIDE_FK_Finger_01_L
+    400040: HIDE_FK_Finger_01_R
+    400042: HIDE_FK_Finger_02_L
+    400044: HIDE_FK_Finger_02_R
+    400046: HIDE_FK_ForeArm_L
+    400048: HIDE_FK_ForeArm_R
+    400050: HIDE_FK_Hand_L
+    400052: HIDE_FK_Hand_R
+    400054: HIDE_FK_Head
+    400056: HIDE_FK_Neck
+    400058: HIDE_FK_Pelvis
+    400060: HIDE_FK_Spine_002
+    400062: HIDE_FK_Spine_003
+    400064: HIDE_FK_Spine_01
+    400066: HIDE_FK_Tail_001
+    400068: HIDE_FK_Tail_002
+    400070: HIDE_FK_Tail_003
+    400072: HIDE_FK_Tail_004
+    400074: HIDE_FK_Tail_005
+    400076: HIDE_FK_Tail_006
+    400078: HIDE_FK_Thigh_L
+    400080: HIDE_FK_Thigh_R
+    400082: HIDE_FK_Thumb_01_L
+    400084: HIDE_FK_Thumb_01_R
+    400086: HIDE_FK_Thumb_02_L
+    400088: HIDE_FK_Thumb_02_R
+    400090: HIDE_FK_UpperArm_L
+    400092: HIDE_FK_UpperArm_R
+    400094: HIDE_FK_Weapon
+    400096: Liane001
+    400098: Liane002
+    400100: Liane003
+    400102: Liane004
+    400104: Liane005
+    400106: Liane006
+    400108: Liane007
+    400110: Liane008
+    400112: Liane009
+    400114: Liane010
+    400116: Liane011
+    400118: Liane012
+    400120: Liane013
+    400122: Liane014
+    400124: Liane015
+    400126: Liane016
+    400128: Liane017
+    400130: Liane018
+    400132: Liane019
+    400134: Liane020
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1.14999998
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
