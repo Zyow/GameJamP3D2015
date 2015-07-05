@@ -21,7 +21,7 @@ public class PlayerAction : PlayerBase
 
 	void Update ()
 	{
-		if (Input.GetButtonDown("Taunt Player "+playerString))
+		if (Input.GetButtonDown("Taunt Player "+ playerString))
 		{
 			print ("launch anim dance " + playerString);
 		}
