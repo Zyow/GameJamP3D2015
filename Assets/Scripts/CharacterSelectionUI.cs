@@ -60,7 +60,7 @@ public class CharacterSelectionUI : MonoBehaviour
 
 		if (Input.GetButtonDown ("Pause") && canLaunchGame)
 		{
-			Application.LoadLevel("SceneRespawnPlayer");
+			Application.LoadLevel("SceneDef");
 			loadingPlayer.ActivePlayer ();
 		}
 	}

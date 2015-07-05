@@ -50,8 +50,8 @@ public class LoadingPlayer : MonoBehaviour
 			Object playerTree = Resources.Load("Player 3");
 			if(GameObject.FindGameObjectWithTag("Player3")==null)
 			{
-				//Instantiate(playerTree);
-				Instantiate (player3Prefab, transform.position, transform.rotation);
+				Instantiate(playerTree);
+				//Instantiate (player3Prefab, transform.position, transform.rotation);
 			}
 		}
 		if (playerFourActive)
@@ -60,8 +60,8 @@ public class LoadingPlayer : MonoBehaviour
 			Object playerFour = Resources.Load("Player 4");
 			if(GameObject.FindGameObjectWithTag("Player4")==null)
 			{
-				//Instantiate(playerFour);
-				Instantiate (player4Prefab, transform.position, transform.rotation);
+				Instantiate(playerFour);
+				//Instantiate (player4Prefab, transform.position, transform.rotation);
 			}
 		}
 	}
