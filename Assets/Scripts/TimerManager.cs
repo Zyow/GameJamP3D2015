@@ -37,6 +37,8 @@ public class TimerManager : MonoBehaviour
 
 	public float outroDuration;
 
+	public AudioManager audioManager;
+
 	void Start() 
 	{
 		timerCurrent = timerMax;
@@ -46,6 +48,7 @@ public class TimerManager : MonoBehaviour
 		superRuleUI.SetActive (false);
 		ShowTimer ();
 		currentIntroTimer = introDuration;
+		audioManager = FindObjectOfType <AudioManager>();
 	}
 
 	private void ShowTimer ()
@@ -147,6 +150,7 @@ public class TimerManager : MonoBehaviour
 
 	public void StartTimer ()
 	{
+		audioManager.GameLaunched ();
 		textCurrentIntroTimer.enabled = false;
 		textTimer.enabled = true;
 		isASuperRuleIsActive = false;
