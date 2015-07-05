@@ -11,7 +11,7 @@ public class PlayerSuicideYourself : PlayerBase
 			isUsed = true;
 	}
 	
-	private void Death ()
+	public void Death ()
 	{
 		if (isUsed == true)
 		{

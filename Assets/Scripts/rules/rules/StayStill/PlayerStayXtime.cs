@@ -19,8 +19,6 @@ public class PlayerStayXtime : PlayerBase
 	}
 	void Update()
 	{
-		print(IsInvoking("TimerUp"));
-
 		if (isUsed)
 		{
 			if (myRigibody.velocity.x >= 0.1 || myRigibody.velocity.x <= -0.1)
@@ -28,9 +26,7 @@ public class PlayerStayXtime : PlayerBase
 			else if (myRigibody.velocity.y > 0.1)
 				CancelInvoke();
 			else
-			{
-				print ("test");
-				if (!IsInvoking("TimerUp"))
+			{	if (!IsInvoking("TimerUp"))
 				{
 					InvokeRepeating("TimerUp",1f,1f);				
 				}
