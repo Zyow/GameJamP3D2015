@@ -19,8 +19,13 @@ public class EndManager : MonoBehaviour
 	public Text textScorePlayer3;
 	public Text textScorePlayer4;
 
+	public AudioManager audioManager;
+
 	void Start ()
 	{
+		audioManager = FindObjectOfType <AudioManager>();
+		audioManager.MenuLaunched ();
+
 		textWinnerPlayer1.SetActive (false);
 		textWinnerPlayer2.SetActive (false);
 		textWinnerPlayer3.SetActive (false);

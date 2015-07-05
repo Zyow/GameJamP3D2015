@@ -30,6 +30,13 @@ public class PlayerAction : PlayerBase
 					GetComponent<PlayerGetCrown>().GotIt();
 				audioSource.PlayOneShot (collectableSFX);
 			}
+
+			if (other.tag == "Piece")
+			{
+				if (GetComponent<PlayerCollectPiece>())
+					GetComponent<PlayerCollectPiece>().GotIt();
+				audioSource.PlayOneShot (collectableSFX);
+			}
 		}
 	}
 

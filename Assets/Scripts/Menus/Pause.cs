@@ -8,12 +8,14 @@ public class Pause : MonoBehaviour
 
 	private AudioSource audioSource;
 	public bool isInPause;
+	public AudioManager audioManager;
 
 	void Awake ()
 	{
 		Time.timeScale = 1;
 		uiPause.SetActive (false);
 		audioSource = GetComponent<AudioSource>();
+		audioManager = FindObjectOfType<AudioManager>();
 	}
 
 	void Update ()
@@ -30,11 +32,13 @@ public class Pause : MonoBehaviour
 		isInPause = !isInPause;
 		if (isInPause)
 		{
+			audioManager.MenuLaunched ();
 			uiPause.SetActive (true);
 			Time.timeScale = 0;
 		}
 		else 
 		{
+			audioManager.GameLaunched ();
 			uiPause.SetActive (false);
 			Time.timeScale = 1;
 		}
