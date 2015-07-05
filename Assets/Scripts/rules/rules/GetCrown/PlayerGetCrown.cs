@@ -5,7 +5,7 @@ public class PlayerGetCrown : PlayerBase
 {
 	public void GotIt ()
 	{
-		if (FindObjectOfType<RuleGetPills>())
-			FindObjectOfType<RuleGetPills>().Done(playerNbr);
+		if (FindObjectOfType<RuleGetCrown>())
+			FindObjectOfType<RuleGetCrown>().Done(playerNbr);
 	}
 }

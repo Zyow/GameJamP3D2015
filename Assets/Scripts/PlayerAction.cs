@@ -23,6 +23,13 @@ public class PlayerAction : PlayerBase
 					GetComponent<PlayerGetPills>().GotIt();
 				audioSource.PlayOneShot (collectableSFX);
 			}
+
+			if (other.tag == "Crown")
+			{
+				if (GetComponent<PlayerGetCrown>())
+					GetComponent<PlayerGetCrown>().GotIt();
+				audioSource.PlayOneShot (collectableSFX);
+			}
 		}
 	}
 
