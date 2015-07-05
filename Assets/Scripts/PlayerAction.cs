@@ -4,6 +4,13 @@ using System.Collections;
 public class PlayerAction : PlayerBase 
 {
 	public AudioClip collectableSFX;
+	private Animator anim;
+
+	void Awake()
+	{
+		base.Awake();
+		anim = GetComponentInChildren<Animator>();
+	}
 
 	void OnTriggerStay (Collider other)
 	{
@@ -24,6 +31,7 @@ public class PlayerAction : PlayerBase
 		if (Input.GetButtonDown("Taunt Player "+ playerString))
 		{
 			print ("launch anim dance " + playerString);
+			anim.SetTrigger("Dance"+playerString);
 		}
 	}
 }
