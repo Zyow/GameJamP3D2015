@@ -12,11 +12,11 @@ public class InstantiateLoadingPlayer : MonoBehaviour
 		}
 	}
 
-	void Update()
+	/*void Update()
 	{
 		if(Input.GetKeyDown(KeyCode.P))
 		{
 			Application.LoadLevel("SceneRespawnPlayer");
 		}
-	}
+	}*/
 }
