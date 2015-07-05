@@ -28,6 +28,9 @@ public class HitCollider : MonoBehaviour
 
 			if (col.GetComponent<BrokenableItem>())
 				col.GetComponent<BrokenableItem>().Damaged(transform.parent.tag);
+
+			if (col.GetComponent<ItemInflictDamage>())
+				col.GetComponent<ItemInflictDamage>().Damaged(transform.parent.tag);
 		}
 	}
 }

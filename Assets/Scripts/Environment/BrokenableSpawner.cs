@@ -30,7 +30,6 @@ public class BrokenableSpawner : MonoBehaviour
 		while (true)
 		{
 			SpawnItem();	
-			print ("time to spawn");
 			yield return new WaitForSeconds(5f);
 		}
 	}
