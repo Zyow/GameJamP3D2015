@@ -9,10 +9,12 @@ public class BrokenableSpawner : MonoBehaviour
 	public int nbrDestroy;
 	private Dictionary<Transform,bool> used = new Dictionary<Transform, bool>();
 	private Dictionary<int,int>  playersScore = new Dictionary<int, int>();
+	private bool done;
 
 	void Start()
 	{
 		pos = new List<Transform>(GetComponentsInChildren<Transform>());
+		pos.Remove(this.transform);
 		for ( int i = 0; i < pos.Count;i++ )
 		{
 			used.Add(pos[i],false);
@@ -49,11 +51,15 @@ public class BrokenableSpawner : MonoBehaviour
 	
 	public void Broken( int player, Transform spawn)
 	{
-		used[spawn] = false;
-		playersScore[player] ++;
-		if(playersScore[player] > nbrDestroy)
+		if(!done)
 		{
-			FindObjectOfType<RuleItemBreak>().Done(player);
+			used[spawn] = false;
+			playersScore[player] ++;
+			if(playersScore[player] >= nbrDestroy)
+			{
+				FindObjectOfType<RuleItemBreak>().Done(player);
+				done=true;
+			}
 		}
 	}
 }

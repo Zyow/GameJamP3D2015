@@ -19,12 +19,22 @@ public class PlayerStayXtime : PlayerBase
 	}
 	void Update()
 	{
+		print(IsInvoking("TimerUp"));
+
 		if (isUsed)
 		{
-			if (myRigibody.velocity.z >= 0.1 || myRigibody.velocity.z <= -0.1)
-				TimerReset();
-			if (myRigibody.velocity.y > 0.1)
-				TimerReset();
+			if (myRigibody.velocity.x >= 0.1 || myRigibody.velocity.x <= -0.1)
+				CancelInvoke();
+			else if (myRigibody.velocity.y > 0.1)
+				CancelInvoke();
+			else
+			{
+				print ("test");
+				if (!IsInvoking("TimerUp"))
+				{
+					InvokeRepeating("TimerUp",1f,1f);				
+				}
+			}
 		}
 	}
 	private void TimerUp()
@@ -44,11 +54,6 @@ public class PlayerStayXtime : PlayerBase
 		}
 		else 
 			CancelInvoke();
-	}
-
-	private void TimerReset()
-	{
-		time = 0;
 	}
 
 	public void Desactive()
