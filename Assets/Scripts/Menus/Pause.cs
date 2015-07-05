@@ -11,6 +11,7 @@ public class Pause : MonoBehaviour
 
 	void Awake ()
 	{
+		Time.timeScale = 1;
 		uiPause.SetActive (false);
 		audioSource = GetComponent<AudioSource>();
 	}
