@@ -11,12 +11,14 @@ public class HitCollider : MonoBehaviour
 
 	void OnTriggerEnter(Collider col)
 	{
+		
 		if (col.tag == "Player1" || col.tag == "Player2" || col.tag == "Player3" || col.tag == "Player4" )
 		{
 //			print ("col");
 			col.GetComponentInParent<Rigidbody>().AddForce(Vector3.up * ejectionForce, ForceMode.Impulse);
 			col.GetComponentInParent<Rigidbody>().AddForce(transform.forward * ejectionForce*2f, ForceMode.Impulse);
 			col.GetComponentInParent<PlayerMove>().Pushed();
+
 			if(enemyHited != null)
 				enemyHited(col.tag);
 		}
@@ -32,5 +34,22 @@ public class HitCollider : MonoBehaviour
 			if (col.GetComponent<ItemInflictDamage>())
 				col.GetComponent<ItemInflictDamage>().Damaged(transform.parent.tag);
 		}
+
+		if (col.tag != "Decors")
+		{
+			if (transform.parent.tag == "Player1")
+				Instantiate (Resources.Load("ParticleHitFliquette") as GameObject, col.transform.position, Quaternion.identity);
+
+			if (transform.parent.tag == "Player2")
+				Instantiate (Resources.Load("ParticleHitPyro") as GameObject, col.transform.position, Quaternion.identity);
+
+			if (transform.parent.tag == "Player3")
+				Instantiate (Resources.Load("ParticleHitDiablotin") as GameObject, col.transform.position, Quaternion.identity);
+
+			if (transform.parent.tag == "Player4")
+				Instantiate (Resources.Load("ParticleHitElBourito") as GameObject, col.transform.position, Quaternion.identity);
+
+		}
+
 	}
 }
