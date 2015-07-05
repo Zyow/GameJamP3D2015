@@ -7,7 +7,7 @@ public class PlayerAction : PlayerBase
 
 	void OnTriggerStay (Collider other)
 	{
-		if (other.GetComponent<Collectables>() && Input.GetButtonDown("Action Player "+playerNbr.ToString()))
+		if (other.GetComponent<Collectables>() && Input.GetButtonDown("Action Player "+ playerString))
 		{
 			other.GetComponent<Collectables>().Collected();
 			 if (other.tag == "Pills")
@@ -16,6 +16,14 @@ public class PlayerAction : PlayerBase
 					GetComponent<PlayerGetPills>().GotIt();
 				audioSource.PlayOneShot (collectableSFX);
 			}
+		}
+	}
+
+	void Update ()
+	{
+		if (Input.GetButtonDown("Taunt Player "+playerString))
+		{
+			print ("launch anim dance " + playerString);
 		}
 	}
 }
