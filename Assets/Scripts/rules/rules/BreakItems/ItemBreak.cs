@@ -8,8 +8,7 @@ public class ItemBreak : MonoBehaviour
 	void Start ()
 	{
 		if ( FindObjectOfType<RuleItemBreak>())
-			isUsed = true;
-		
+			isUsed = true;		
 	}
 	
 	public void Breaking(string player)
@@ -32,7 +31,8 @@ public class ItemBreak : MonoBehaviour
 				playerNbr = 4;
 				break;
 			}
-			FindObjectOfType<RuleItemBreak>().Done(playerNbr);			
+
+			FindObjectOfType<BrokenableSpawner>().Broken(playerNbr,transform.parent.transform);			
 		}
 	}
 }

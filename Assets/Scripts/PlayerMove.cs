@@ -68,7 +68,7 @@ public class PlayerMove : PlayerBase
 			    ( Physics.Raycast (GetComponent<Collider>().bounds.center - new Vector3( 0f , GetComponent<Collider>().bounds.extents.y, 0f), transform.forward, out hit, 0.6f)))
 			{
 				Debug.DrawLine(transform.position, hit.point, Color.red);
-				print (hit.collider.gameObject);
+//				print (hit.collider.gameObject);
 				myRigidbody.velocity = new Vector3(0, myRigidbody.velocity.y, myRigidbody.velocity.z);
 				//			myRigidbody.AddForce(-transform.forward * 5f, ForceMode.Impulse);
 				canMove = false;

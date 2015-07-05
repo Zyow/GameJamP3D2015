@@ -24,9 +24,6 @@ public class PlayerXHits : PlayerBase
 
 	private void HitGived (string target)
 	{
-		print (target);
-		print(playerTouch[target]);
-
 		if (isUsed)
 		{
 			playerTouch[target] ++;

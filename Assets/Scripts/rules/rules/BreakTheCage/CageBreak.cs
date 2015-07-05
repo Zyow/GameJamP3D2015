@@ -32,7 +32,8 @@ public class CageBreak : MonoBehaviour
 				playerNbr = 4;
 				break;
 			}
-			FindObjectOfType<RuleBreakCage>().Done(playerNbr);			
+			FindObjectOfType<RuleBreakCage>().Done(playerNbr);		
+			isUsed = false;
 		}
 	}
 }

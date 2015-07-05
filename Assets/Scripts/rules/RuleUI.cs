@@ -25,11 +25,11 @@ public class RuleUI : MonoBehaviour
 			break;
 
 		case 3 :
-			text.color = Color.yellow;
+			text.color = Color.red;
 			break;
 
 		case 4 :
-			text.color = Color.red;
+			text.color = Color.yellow;
 			break;
 		}
 	}
