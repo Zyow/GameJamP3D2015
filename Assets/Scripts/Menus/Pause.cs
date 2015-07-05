@@ -19,18 +19,28 @@ public class Pause : MonoBehaviour
 	{
 		if (Input.GetButtonDown("Pause"))
 		{
-			audioSource.PlayOneShot (pauseSFX);
-			isInPause = !isInPause;
-			if (isInPause)
-			{
-				uiPause.SetActive (true);
-				Time.timeScale = 0;
-			}
-			else 
-			{
-				uiPause.SetActive (false);
-				Time.timeScale = 1;
-			}
+			ButtonResume ();
 		}
+	}
+
+	public void ButtonResume ()
+	{
+		audioSource.PlayOneShot (pauseSFX);
+		isInPause = !isInPause;
+		if (isInPause)
+		{
+			uiPause.SetActive (true);
+			Time.timeScale = 0;
+		}
+		else 
+		{
+			uiPause.SetActive (false);
+			Time.timeScale = 1;
+		}
+	}
+
+	public void ButtonTitleScreen ()
+	{
+		Application.LoadLevel ("Scene Title Screen");
 	}
 }
