@@ -16,7 +16,7 @@ public class PlayerJumpXTime : PlayerBase
 	private void Jumping ()
 	{
 		timeJumped ++;
-		if (isUsed == true && timeJumped >= 10 )
+		if (isUsed == true && timeJumped >= 15 )
 		{
 			FindObjectOfType<RuleJumpXTime>().Done(playerNbr);
 
