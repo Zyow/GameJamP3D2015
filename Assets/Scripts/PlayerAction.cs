@@ -30,7 +30,6 @@ public class PlayerAction : PlayerBase
 	{
 		if (Input.GetButtonDown("Taunt Player "+ playerString))
 		{
-			print ("launch anim dance " + playerString);
 			anim.SetTrigger("Dance"+playerString);
 		}
 	}
