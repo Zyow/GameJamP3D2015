@@ -27,6 +27,8 @@ public class TimerManager : MonoBehaviour
 	private float currentSuperRuleDuration;
 	private float currentSuperRuleWaitingTime;
 
+	public GameObject endGameManager;
+
 	void Start() 
 	{
 		timerCurrent = timerMax;
@@ -109,5 +111,7 @@ public class TimerManager : MonoBehaviour
 		StopAllCoroutines ();
 		isASuperRuleIsActive = false;
 		superRuleUI.SetActive (isASuperRuleIsActive);
+
+		Instantiate (endGameManager);
 	}
 }
