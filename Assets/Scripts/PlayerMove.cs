@@ -22,6 +22,7 @@ public class PlayerMove : PlayerBase
 	private MyCharacterController myCharacterController;
 	private float horizontalInputSpeed;
 
+
 	protected override void Awake ()
 	{
 		base.Awake ();

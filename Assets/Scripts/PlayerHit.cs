@@ -9,11 +9,15 @@ public class PlayerHit : PlayerBase
 	
 	private PlayerMove playerMove;
 
+	private Animator anim;
+
 	protected override void Awake ()
 	{
 		base.Awake();
 		playerMove = GetComponent<PlayerMove>();
 		attackPrefab.SetActive(false);
+		if(GetComponentInChildren<Animator>() != null)
+			anim = GetComponentInChildren<Animator>();
 	}
 
 	void Update ()
@@ -28,7 +32,8 @@ public class PlayerHit : PlayerBase
 		{
 			canAttack = false;
 			attackPrefab.SetActive(true);
-
+			if (anim != null)
+				anim.SetTrigger("Hit");
 		}
 		yield return new WaitForSeconds(0.2f);
 		attackPrefab.SetActive(false);

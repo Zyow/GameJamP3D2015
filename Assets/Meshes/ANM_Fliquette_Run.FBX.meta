@@ -1,0 +1,139 @@
+fileFormatVersion: 2
+guid: e4706705fc81fe1439c637e95c08e8a2
+timeCreated: 1436093258
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: HIDE_FK_BIP_001
+    100004: HIDE_FK_Boobs_L
+    100006: HIDE_FK_Boobs_R
+    100008: HIDE_FK_Calf_L
+    100010: HIDE_FK_Calf_R
+    100012: HIDE_FK_Clavicle_L
+    100014: HIDE_FK_Clavicle_R
+    100016: HIDE_FK_Finger_01_L
+    100018: HIDE_FK_Finger_01_R
+    100020: HIDE_FK_Finger_02_L
+    100022: HIDE_FK_Finger_02_R
+    100024: HIDE_FK_ForeArm_L
+    100026: HIDE_FK_ForeArm_R
+    100028: HIDE_FK_Hair_002
+    100030: HIDE_FK_Hair_003
+    100032: HIDE_FK_Hair_01
+    100034: HIDE_FK_Hand_L
+    100036: HIDE_FK_Hand_R
+    100038: HIDE_FK_Head
+    100040: HIDE_FK_Neck
+    100042: HIDE_FK_Pelvis
+    100044: HIDE_FK_Spine_002
+    100046: HIDE_FK_Spine_003
+    100048: HIDE_FK_Spine_01
+    100050: HIDE_FK_Thigh_L
+    100052: HIDE_FK_Thigh_R
+    100054: HIDE_FK_Thumb_01_L
+    100056: HIDE_FK_Thumb_01_R
+    100058: HIDE_FK_Thumb_02_L
+    100060: HIDE_FK_Thumb_02_R
+    100062: HIDE_FK_UpperArm_L
+    100064: HIDE_FK_UpperArm_R
+    100066: HIDE_FK_Weapon
+    400000: //RootNode
+    400002: HIDE_FK_BIP_001
+    400004: HIDE_FK_Boobs_L
+    400006: HIDE_FK_Boobs_R
+    400008: HIDE_FK_Calf_L
+    400010: HIDE_FK_Calf_R
+    400012: HIDE_FK_Clavicle_L
+    400014: HIDE_FK_Clavicle_R
+    400016: HIDE_FK_Finger_01_L
+    400018: HIDE_FK_Finger_01_R
+    400020: HIDE_FK_Finger_02_L
+    400022: HIDE_FK_Finger_02_R
+    400024: HIDE_FK_ForeArm_L
+    400026: HIDE_FK_ForeArm_R
+    400028: HIDE_FK_Hair_002
+    400030: HIDE_FK_Hair_003
+    400032: HIDE_FK_Hair_01
+    400034: HIDE_FK_Hand_L
+    400036: HIDE_FK_Hand_R
+    400038: HIDE_FK_Head
+    400040: HIDE_FK_Neck
+    400042: HIDE_FK_Pelvis
+    400044: HIDE_FK_Spine_002
+    400046: HIDE_FK_Spine_003
+    400048: HIDE_FK_Spine_01
+    400050: HIDE_FK_Thigh_L
+    400052: HIDE_FK_Thigh_R
+    400054: HIDE_FK_Thumb_01_L
+    400056: HIDE_FK_Thumb_01_R
+    400058: HIDE_FK_Thumb_02_L
+    400060: HIDE_FK_Thumb_02_R
+    400062: HIDE_FK_UpperArm_L
+    400064: HIDE_FK_UpperArm_R
+    400066: HIDE_FK_Weapon
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1.14999998
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
