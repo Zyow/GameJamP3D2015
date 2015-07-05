@@ -28,6 +28,14 @@ public class TimerManager : MonoBehaviour
 	private float currentSuperRuleWaitingTime;
 
 	public GameObject endGameManager;
+	public float introDuration;
+
+	private float currentIntroTimer;
+	public Text textCurrentIntroTimer;
+
+	public Animator introAnimator;
+
+	public float outroDuration;
 
 	void Start() 
 	{
@@ -37,6 +45,7 @@ public class TimerManager : MonoBehaviour
 		textTimer.enabled = false;
 		superRuleUI.SetActive (false);
 		ShowTimer ();
+		currentIntroTimer = introDuration;
 	}
 
 	private void ShowTimer ()
@@ -49,7 +58,7 @@ public class TimerManager : MonoBehaviour
 		isASuperRuleIsActive = true;
 		superRuleUI.SetActive (isASuperRuleIsActive);
 		currentSuperRuleDuration = Random.Range (minSuperRuleDuration, maxSuperRuleDuration);
-		StartCoroutine (EndSuperRule(currentSuperRuleDuration));
+		StartCoroutine (EndSuperRule (currentSuperRuleDuration));
 	}
 
 	private void WaitSuperRule ()
@@ -57,7 +66,7 @@ public class TimerManager : MonoBehaviour
 		isASuperRuleIsActive = false;
 		superRuleUI.SetActive (isASuperRuleIsActive);
 		currentSuperRuleWaitingTime = Random.Range (minSuperRuleWaitingTime, maxSuperRuleWaitingTime);
-		StartCoroutine (StartSuperRule(currentSuperRuleWaitingTime));
+		StartCoroutine (StartSuperRule (currentSuperRuleWaitingTime));
 	}
 
 	IEnumerator StartSuperRule (float waitTime) 
@@ -72,15 +81,23 @@ public class TimerManager : MonoBehaviour
 		WaitSuperRule ();
 	}
 
-	IEnumerator TimerUI(float waitTime) 
+	IEnumerator TimerUI (float waitTime) 
 	{
 		yield return new WaitForSeconds(waitTime);
 		timerCurrent -= timeRefreshTimer;
 		ShowTimer ();
 		if (timerCurrent > 0)
-			StartCoroutine(TimerUI(timeRefreshTimer));
+			StartCoroutine (TimerUI (timeRefreshTimer));
 		else
 			EndTimer ();
+
+		if (timerCurrent == outroDuration)
+			Outro ();
+	}
+
+	private void Outro ()
+	{
+		introAnimator.SetTrigger ("onOutro");
 	}
 
 	void Update ()
@@ -88,20 +105,53 @@ public class TimerManager : MonoBehaviour
 		if (canCheat)
 		{
 			//cheat
-			if (Input.GetKeyDown(KeyCode.C))
-				StartTimer ();
+			if (Input.GetKeyDown (KeyCode.C))
+				StartIntro ();
+				//StartTimer ();
 			
-			if (Input.GetKeyDown(KeyCode.R))
+			if (Input.GetKeyDown (KeyCode.R))
 				EndTimer ();
 		}
 	}
 
+	public void StartIntro ()
+	{
+		StartCoroutine (IntroTimer(1f));
+		introAnimator.SetTrigger ("onIntro");
+	}
+
+	private void ShowTimerIntro ()
+	{
+		if (currentIntroTimer > 0)
+			textCurrentIntroTimer.text = currentIntroTimer + "";
+		else 
+			textCurrentIntroTimer.text = "Partez !";
+	}
+
+	IEnumerator IntroTimer (float waitTime)
+	{
+		ShowTimerIntro ();
+		yield return new WaitForSeconds(waitTime);
+		currentIntroTimer --;
+		if (currentIntroTimer >= 0)
+			StartCoroutine (IntroTimer (1f));
+		else
+			StartTimer ();
+	}
+
+	IEnumerator WaitTimer (float waitTime) 
+	{
+		yield return new WaitForSeconds(waitTime);
+		StartTimer ();
+	}
+
 	public void StartTimer ()
 	{
+		textCurrentIntroTimer.enabled = false;
 		textTimer.enabled = true;
 		isASuperRuleIsActive = false;
 		superRuleUI.SetActive (isASuperRuleIsActive);
-		StartCoroutine(TimerUI(timeRefreshTimer));
+		StartCoroutine (TimerUI (timeRefreshTimer));
 		if (isThereSuperRulesInTheGame)
 			WaitSuperRule ();
 	}
