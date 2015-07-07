@@ -9,10 +9,10 @@ public class EndManager : MonoBehaviour
 	public GameObject textWinnerPlayer3;
 	public GameObject textWinnerPlayer4;
 
-	public int scorePlayer1;
-	public int scorePlayer2;
-	public int scorePlayer3;
-	public int scorePlayer4;
+//	public int scorePlayer1;
+//	public int scorePlayer2;
+//	public int scorePlayer3;
+//	public int scorePlayer4;
 
 	public Text textScorePlayer1;
 	public Text textScorePlayer2;
@@ -21,39 +21,54 @@ public class EndManager : MonoBehaviour
 
 	public AudioManager audioManager;
 
+	public GameObject canvasEnd;
+	
+	public RuleScore ruleScorePlayer1;
+	public RuleScore ruleScorePlayer2;
+	public RuleScore ruleScorePlayer3;
+	public RuleScore ruleScorePlayer4;
+
 	void Start ()
 	{
 		audioManager = FindObjectOfType <AudioManager>();
-		audioManager.MenuLaunched ();
+		if (audioManager != null)
+			audioManager.MenuLaunched ();
+
+		canvasEnd.SetActive (false);
 
 		textWinnerPlayer1.SetActive (false);
 		textWinnerPlayer2.SetActive (false);
 		textWinnerPlayer3.SetActive (false);
 		textWinnerPlayer4.SetActive (false);
 
-		textScorePlayer1.text = "Score : " + scorePlayer1;
-		textScorePlayer2.text = "Score : " + scorePlayer2;
-		textScorePlayer3.text = "Score : " + scorePlayer3;
-		textScorePlayer4.text = "Score : " + scorePlayer4;
+	}
 
-		if (scorePlayer1 >= scorePlayer2
-		    && scorePlayer1 >= scorePlayer3
-		    && scorePlayer1 >= scorePlayer4)
+	public void ActiveEnd ()
+	{
+		textScorePlayer1.text = "Score : " + ruleScorePlayer1.score;
+		textScorePlayer2.text = "Score : " + ruleScorePlayer2.score;
+		textScorePlayer3.text = "Score : " + ruleScorePlayer3.score;
+		textScorePlayer4.text = "Score : " + ruleScorePlayer4.score;
+		canvasEnd.SetActive (true);
+
+		if (ruleScorePlayer1.score >= ruleScorePlayer2.score
+		    && ruleScorePlayer1.score >= ruleScorePlayer3.score
+		    && ruleScorePlayer1.score >= ruleScorePlayer4.score)
 			Player1Win ();
-
-		if (scorePlayer2 >= scorePlayer1
-		    && scorePlayer2 >= scorePlayer3
-		    && scorePlayer2 >= scorePlayer4)
+		
+		if (ruleScorePlayer2.score >= ruleScorePlayer1.score
+		    && ruleScorePlayer2.score >= ruleScorePlayer3.score
+		    && ruleScorePlayer2.score >= ruleScorePlayer4.score)
 			Player2Win ();
-
-		if (scorePlayer3 >= scorePlayer1
-		    && scorePlayer3 >= scorePlayer2
-		    && scorePlayer3 >= scorePlayer4)
+		
+		if (ruleScorePlayer3.score >= ruleScorePlayer1.score
+		    && ruleScorePlayer3.score >= ruleScorePlayer2.score
+		    && ruleScorePlayer3.score >= ruleScorePlayer4.score)
 			Player3Win ();
-
-		if (scorePlayer4 >= scorePlayer1
-		    && scorePlayer4 >= scorePlayer2
-		    && scorePlayer4 >= scorePlayer3)
+		
+		if (ruleScorePlayer4.score >= ruleScorePlayer1.score
+		    && ruleScorePlayer4.score >= ruleScorePlayer2.score
+		    && ruleScorePlayer4.score >= ruleScorePlayer3.score)
 			Player4Win ();
 	}
 

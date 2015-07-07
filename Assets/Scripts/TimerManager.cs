@@ -39,8 +39,14 @@ public class TimerManager : MonoBehaviour
 
 	public AudioManager audioManager;
 
-	void Start() 
+	public EndManager endManager;
+
+	public Renderer curtainG;
+	public Renderer curtainD;
+
+	void Awake () 
 	{
+		//introAnimator = curtains.GetComponent<Animator>();
 		timerCurrent = timerMax;
 		//textTimer = transform.GetChild(0).GetChild(0).GetComponent<Text>();
 		//superRuleUI = transform.GetChild(0).GetChild(1).gameObject;
@@ -49,6 +55,7 @@ public class TimerManager : MonoBehaviour
 		ShowTimer ();
 		currentIntroTimer = introDuration;
 		audioManager = FindObjectOfType <AudioManager>();
+		endManager = FindObjectOfType <EndManager>();
 		StartIntro ();
 	}
 
@@ -101,7 +108,20 @@ public class TimerManager : MonoBehaviour
 
 	private void Outro ()
 	{
+		ShowCurtains ();
 		introAnimator.SetTrigger ("onOutro");
+	}
+
+	private void ShowCurtains ()
+	{
+		curtainG.enabled = true;
+		curtainD.enabled = true;
+	}
+
+	private void HideCurtains ()
+	{
+		curtainG.enabled = false;
+		curtainD.enabled = false;
 	}
 
 	void Update ()
@@ -121,6 +141,8 @@ public class TimerManager : MonoBehaviour
 	public void StartIntro ()
 	{
 		StartCoroutine (IntroTimer(1f));
+		
+		ShowCurtains ();
 		introAnimator.SetTrigger ("onIntro");
 	}
 
@@ -155,6 +177,8 @@ public class TimerManager : MonoBehaviour
 			audioManager.GameLaunched ();
 
 		textCurrentIntroTimer.enabled = false;
+		HideCurtains ();
+
 		textTimer.enabled = true;
 		isASuperRuleIsActive = false;
 		superRuleUI.SetActive (isASuperRuleIsActive);
@@ -165,10 +189,14 @@ public class TimerManager : MonoBehaviour
 
 	private void EndTimer ()
 	{
+		if (audioManager != null)
+			audioManager.MenuLaunched ();
+
 		StopAllCoroutines ();
 		isASuperRuleIsActive = false;
 		superRuleUI.SetActive (isASuperRuleIsActive);
-
-		Instantiate (endGameManager);
+		//Instantiate (endGameManager);
+		endManager.ActiveEnd ();
+		HideCurtains ();
 	}
 }
