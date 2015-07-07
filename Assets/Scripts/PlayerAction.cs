@@ -12,7 +12,7 @@ public class PlayerAction : PlayerBase
 		anim = GetComponentInChildren<Animator>();
 	}
 
-	void OnTriggerStay (Collider other)
+	void OnTriggerStay2D (Collider2D other)
 	{
 		if (other.GetComponent<Collectables>() && Input.GetButtonDown("Action Player "+ playerString))
 		{

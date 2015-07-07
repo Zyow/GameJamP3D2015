@@ -6,17 +6,17 @@ public class HitCollider : MonoBehaviour
 {
 	public Action<string> enemyHited;
 
-	private float ejectionForce = 8f;
+	private float ejectionForce = 4f;
 
 
-	void OnTriggerEnter(Collider col)
+	void OnTriggerEnter2D(Collider2D col)
 	{
 		
 		if (col.tag == "Player1" || col.tag == "Player2" || col.tag == "Player3" || col.tag == "Player4" )
 		{
 //			print ("col");
-			col.GetComponentInParent<Rigidbody>().AddForce(Vector3.up * ejectionForce, ForceMode.Impulse);
-			col.GetComponentInParent<Rigidbody>().AddForce(transform.forward * ejectionForce*2f, ForceMode.Impulse);
+			col.GetComponentInParent<Rigidbody2D>().AddForce(Vector2.up * ejectionForce, ForceMode2D.Impulse);
+			col.GetComponentInParent<Rigidbody2D>().AddForce(transform.forward * ejectionForce*2f, ForceMode2D.Impulse);
 			col.GetComponentInParent<PlayerMove>().Pushed();
 
 			if(enemyHited != null)

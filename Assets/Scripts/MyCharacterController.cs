@@ -11,22 +11,22 @@ public class MyCharacterController : MonoBehaviour
 	
 	void Update () 
 	{
-		RaycastHit downHit;
-		if (Physics.Raycast(GetComponent<Collider>().bounds.center, -Vector3.up, out downHit, 1.4f) ||
-		    ( Physics.Raycast (GetComponent<Collider>().bounds.center + new Vector3( 0f , GetComponent<Collider>().bounds.extents.x/2, 0f), -Vector3.up, out downHit, 1.4f)) || 
-		    ( Physics.Raycast (GetComponent<Collider>().bounds.center - new Vector3( 0f , GetComponent<Collider>().bounds.extents.x/2, 0f), -Vector3.up, out downHit, 1.4f)))
-		{		
-			Debug.DrawLine(transform.position, downHit.point, Color.red);
-			onTheGround = true;	
-			if (hitTag != null)
-				hitTag(downHit.transform.tag);
-		}
-		else
-		{
-			onTheGround = false;
-			if (hitTag != null)
-				hitTag(null);
-		}
+//		RaycastHit downHit;
+//		if (Physics.Raycast(GetComponent<Collider2D>().bounds.center, -Vector3.up, out downHit, 1.4f) ||
+//		    ( Physics.Raycast (GetComponent<Collider2D>().bounds.center + new Vector3( 0f , GetComponent<Collider>().bounds.extents.x/2, 0f), -Vector3.up, out downHit, 1.4f)) || 
+//		    ( Physics.Raycast (GetComponent<Collider2D>().bounds.center - new Vector3( 0f , GetComponent<Collider>().bounds.extents.x/2, 0f), -Vector3.up, out downHit, 1.4f)))
+//		{		
+//			Debug.DrawLine(transform.position, downHit.point, Color.red);
+//			onTheGround = true;	
+//			if (hitTag != null)
+//				hitTag(downHit.transform.tag);
+//		}
+//		else
+//		{
+//			onTheGround = false;
+//			if (hitTag != null)
+//				hitTag(null);
+//		}
 
 		RaycastHit frontHit;
 		if (Physics.SphereCast(transform.position, 0.5f, Vector3.forward, out frontHit, 0.75f))
