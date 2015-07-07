@@ -151,7 +151,9 @@ public class TimerManager : MonoBehaviour
 
 	public void StartTimer ()
 	{
-		audioManager.GameLaunched ();
+		if (audioManager != null)
+			audioManager.GameLaunched ();
+
 		textCurrentIntroTimer.enabled = false;
 		textTimer.enabled = true;
 		isASuperRuleIsActive = false;
