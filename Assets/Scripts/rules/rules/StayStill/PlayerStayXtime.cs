@@ -5,7 +5,7 @@ public class PlayerStayXtime : PlayerBase
 {
 	private int time;
 	public int timeMax;
-	private Rigidbody myRigibody;
+	private Rigidbody2D myRigibody;
 	private bool isUsed;
 
 	 void Start()
@@ -15,7 +15,7 @@ public class PlayerStayXtime : PlayerBase
 			InvokeRepeating("TimerUp",1f,1f);
 			isUsed = true;
 		}
-		myRigibody = GetComponent<Rigidbody>();
+		myRigibody = GetComponent<Rigidbody2D>();
 	}
 	void Update()
 	{

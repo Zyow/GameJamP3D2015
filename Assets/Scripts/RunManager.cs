@@ -3,13 +3,13 @@ using System.Collections;
 
 public class RunManager : MonoBehaviour 
 {
-	private Rigidbody rigid;
+	private Rigidbody2D rigid;
 	private Animator anim;
 
 	// Use this for initialization
 	void Awake () 
 	{
-		rigid = GetComponentInParent<Rigidbody>();
+		rigid = GetComponentInParent<Rigidbody2D>();
 		anim = GetComponent<Animator>();
 	
 	}

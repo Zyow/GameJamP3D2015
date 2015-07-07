@@ -13,7 +13,7 @@ public class PlayerHide : PlayerBase
 			isUsed = true;
 	}
 
-	void OnTriggerEnter(Collider other)
+	void OnTriggerEnter2D(Collider2D other)
 	{
 		if(other.tag == "Hide")
 		{
@@ -21,7 +21,7 @@ public class PlayerHide : PlayerBase
 		}
 	}
 
-	void OnTriggerExit(Collider other)
+	void OnTriggerExit2D(Collider2D other)
 	{
 		if (other.tag == "Hide")
 		{

@@ -17,7 +17,7 @@ public class PlayerTravel : PlayerBase
 	{
 		if (isUsed == true)
 		{
-			distance += Mathf.Abs((GetComponent<Rigidbody>().velocity.x)/100f);
+			distance += Mathf.Abs((GetComponent<Rigidbody2D>().velocity.x)/100f);
 			if (distance >= distanceMax)
 			{
 				FindObjectOfType<RuleTravel>().Done(playerNbr);
