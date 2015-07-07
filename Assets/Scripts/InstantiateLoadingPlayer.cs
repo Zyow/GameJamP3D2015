@@ -8,7 +8,7 @@ public class InstantiateLoadingPlayer : MonoBehaviour
 		Object loadingPlayer = Resources.Load("LoadingPlayer");
 		if(GameObject.FindObjectOfType<LoadingPlayer>() == null)
 		{
-			Instantiate(loadingPlayer);
+			//Instantiate(loadingPlayer);
 		}
 	}
 

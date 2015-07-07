@@ -32,6 +32,11 @@ public class CharacterSelectionUI : MonoBehaviour
 		loadingPlayer = FindObjectOfType<LoadingPlayer>();
 		cantLaunchGameUI.SetActive (true);
 		canLaunchGameUI.SetActive (false);
+
+		PlayerPrefs.SetInt ("Player 1", 0);
+		PlayerPrefs.SetInt ("Player 2", 0);
+		PlayerPrefs.SetInt ("Player 3", 0);
+		PlayerPrefs.SetInt ("Player 4", 0);
 	}
 
 	void Update ()
@@ -53,7 +58,7 @@ public class CharacterSelectionUI : MonoBehaviour
 			if (Input.GetKeyDown (KeyCode.Return) && canLaunchGame)
 			{
 				Application.LoadLevel("SceneDef");
-				loadingPlayer.ActivePlayer ();
+				//loadingPlayer.ActivePlayer ();
 			}
 		}
 
@@ -106,96 +111,132 @@ public class CharacterSelectionUI : MonoBehaviour
 
 	public void ActivePlayer1 ()
 	{
-		if (!loadingPlayer.playerOneActive)
+		//if (!loadingPlayer.playerOneActive)
+		if (PlayerPrefs.GetInt ("Player 1", 0) != 1)
 		{
 			textPlayer1Join.SetActive (false);
 			textPlayer1Joined.SetActive (true);
 			numberActivePlayers ++;
-			loadingPlayer.playerOneActive = true;
+
+			//loadingPlayer.playerOneActive = true;
+			PlayerPrefs.SetInt ("Player 1", 1);
+
 			CheckNumberPlayers ();
 		}
 	}
 
 	public void ActivePlayer2 ()
 	{
-		if (!loadingPlayer.playerTwoActive)
+		//if (!loadingPlayer.playerTwoActive)
+		if (PlayerPrefs.GetInt ("Player 2", 0) != 1)
 		{
 			textPlayer2Join.SetActive (false);
 			textPlayer2Joined.SetActive (true);
 			numberActivePlayers ++;
-			loadingPlayer.playerTwoActive = true;
+
+			//loadingPlayer.playerTwoActive = true;
+			PlayerPrefs.SetInt ("Player 2", 1);
+
 			CheckNumberPlayers ();
 		}
 	}
 
 	public void ActivePlayer3 ()
 	{
-		if (!loadingPlayer.playerTreeActive)
+		//if (!loadingPlayer.playerTreeActive)
+		if (PlayerPrefs.GetInt ("Player 3", 0) != 1)
 		{
 			textPlayer3Join.SetActive (false);
 			textPlayer3Joined.SetActive (true);
 			numberActivePlayers ++;
-			loadingPlayer.playerTreeActive = true;
+
+			//loadingPlayer.playerTreeActive = true;
+			PlayerPrefs.SetInt ("Player 3", 1);
+
 			CheckNumberPlayers ();
 		}
 	}
 
 	public void ActivePlayer4 ()
 	{
-		if (!loadingPlayer.playerFourActive)
+		//if (!loadingPlayer.playerFourActive)
+		if (PlayerPrefs.GetInt ("Player 4", 0) != 1)
 		{
 			textPlayer4Join.SetActive (false);
 			textPlayer4Joined.SetActive (true);
 			numberActivePlayers ++;
-			loadingPlayer.playerFourActive = true;
+
+			//loadingPlayer.playerFourActive = true;
+			PlayerPrefs.SetInt ("Player 4", 1);
+
 			CheckNumberPlayers ();
 		}
 	}
 
+
+
+
+
 	public void DesactivePlayer1 ()
 	{
-		if (loadingPlayer.playerOneActive)
+		//if (loadingPlayer.playerOneActive)
+		if (PlayerPrefs.GetInt ("Player 1", 0) == 1)
 		{
 			textPlayer1Join.SetActive (true);
 			textPlayer1Joined.SetActive (false);
 			numberActivePlayers --;
-			loadingPlayer.playerOneActive = false;
+
+			//loadingPlayer.playerOneActive = false;
+			PlayerPrefs.SetInt ("Player 1", 0);
+
 			CheckNumberPlayers ();
 		}
 	}
 	
 	public void DesactivePlayer2 ()
 	{
-		if (loadingPlayer.playerTwoActive)
+		//if (loadingPlayer.playerTwoActive)
+		if (PlayerPrefs.GetInt ("Player 2", 0) == 1)
 		{
 			textPlayer2Join.SetActive (true);
 			textPlayer2Joined.SetActive (false);
 			numberActivePlayers --;
-			loadingPlayer.playerTwoActive = false;
+
+			//loadingPlayer.playerTwoActive = false;
+			PlayerPrefs.SetInt ("Player 2", 0);
+
 			CheckNumberPlayers ();
 		}
 	}
 	
 	public void DesactivePlayer3 ()
 	{
-		if (loadingPlayer.playerTreeActive)
+		//if (loadingPlayer.playerTreeActive)
+		if (PlayerPrefs.GetInt ("Player 3", 0) == 1)
 		{
 			textPlayer3Join.SetActive (true);
 			textPlayer3Joined.SetActive (false);
 			numberActivePlayers --;
-			loadingPlayer.playerTreeActive = false;
+
+			//loadingPlayer.playerTreeActive = false;
+			PlayerPrefs.SetInt ("Player 3", 0);
+
 			CheckNumberPlayers ();
 		}
 	}
 	
 	public void DesactivePlayer4 ()
 	{
-		if (loadingPlayer.playerFourActive)
+		//if (loadingPlayer.playerFourActive)
+		if (PlayerPrefs.GetInt ("Player 4", 0) == 1)
 		{
 			textPlayer4Join.SetActive (true);
 			textPlayer4Joined.SetActive (false);
 			numberActivePlayers --;
-			loadingPlayer.playerFourActive = false;
+
+			//loadingPlayer.playerFourActive = false;
+			PlayerPrefs.SetInt ("Player 4", 0);
+
 			CheckNumberPlayers ();
 		}
 	}
