@@ -21,9 +21,22 @@ public class CharacterSelectionUI : MonoBehaviour
 	public GameObject textPlayer3Joined;
 	public GameObject textPlayer4Joined;
 
+	public GameObject renderP1;
+	public GameObject renderP2;
+	public GameObject renderP3;
+	public GameObject renderP4;
+
 	public int minPlayersNeed;
 
 	public bool canCheat;
+
+	void Awake()
+	{
+		renderP1.SetActive(false);
+		renderP2.SetActive(false);
+		renderP3.SetActive(false);
+		renderP4.SetActive(false);
+	}
 
 	void Start ()
 	{
@@ -116,6 +129,7 @@ public class CharacterSelectionUI : MonoBehaviour
 		{
 			textPlayer1Join.SetActive (false);
 			textPlayer1Joined.SetActive (true);
+			renderP1.SetActive(true);
 			numberActivePlayers ++;
 
 			//loadingPlayer.playerOneActive = true;
@@ -132,6 +146,7 @@ public class CharacterSelectionUI : MonoBehaviour
 		{
 			textPlayer2Join.SetActive (false);
 			textPlayer2Joined.SetActive (true);
+			renderP2.SetActive(true);
 			numberActivePlayers ++;
 
 			//loadingPlayer.playerTwoActive = true;
@@ -148,6 +163,7 @@ public class CharacterSelectionUI : MonoBehaviour
 		{
 			textPlayer3Join.SetActive (false);
 			textPlayer3Joined.SetActive (true);
+			renderP3.SetActive(true);
 			numberActivePlayers ++;
 
 			//loadingPlayer.playerTreeActive = true;
@@ -164,6 +180,7 @@ public class CharacterSelectionUI : MonoBehaviour
 		{
 			textPlayer4Join.SetActive (false);
 			textPlayer4Joined.SetActive (true);
+			renderP4.SetActive(true);
 			numberActivePlayers ++;
 
 			//loadingPlayer.playerFourActive = true;
@@ -184,6 +201,7 @@ public class CharacterSelectionUI : MonoBehaviour
 		{
 			textPlayer1Join.SetActive (true);
 			textPlayer1Joined.SetActive (false);
+			renderP1.SetActive(false);
 			numberActivePlayers --;
 
 			//loadingPlayer.playerOneActive = false;
@@ -200,6 +218,7 @@ public class CharacterSelectionUI : MonoBehaviour
 		{
 			textPlayer2Join.SetActive (true);
 			textPlayer2Joined.SetActive (false);
+			renderP2.SetActive(false);
 			numberActivePlayers --;
 
 			//loadingPlayer.playerTwoActive = false;
@@ -216,6 +235,7 @@ public class CharacterSelectionUI : MonoBehaviour
 		{
 			textPlayer3Join.SetActive (true);
 			textPlayer3Joined.SetActive (false);
+			renderP3.SetActive(false);
 			numberActivePlayers --;
 
 			//loadingPlayer.playerTreeActive = false;
@@ -232,6 +252,7 @@ public class CharacterSelectionUI : MonoBehaviour
 		{
 			textPlayer4Join.SetActive (true);
 			textPlayer4Joined.SetActive (false);
+			renderP4.SetActive(false);
 			numberActivePlayers --;
 
 			//loadingPlayer.playerFourActive = false;
