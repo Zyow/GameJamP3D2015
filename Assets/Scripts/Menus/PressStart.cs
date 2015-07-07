@@ -12,5 +12,8 @@ public class PressStart : MonoBehaviour
 
 		if (canCheat && Input.GetKeyDown(KeyCode.Return))
 			Application.LoadLevel ("SceneCharacterSelection");
+
+		if (canCheat && Input.GetKeyDown(KeyCode.C))
+			Application.LoadLevel ("Scene Credits Screen");
 	}
 }

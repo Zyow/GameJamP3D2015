@@ -129,11 +129,11 @@ public class TimerManager : MonoBehaviour
 		if (canCheat)
 		{
 			//cheat
-			if (Input.GetKeyDown (KeyCode.C))
-				StartIntro ();
+			//if (Input.GetKeyDown (KeyCode.Alpha6))
+			//	StartIntro ();
 				//StartTimer ();
 			
-			if (Input.GetKeyDown (KeyCode.R))
+			if (Input.GetKeyDown (KeyCode.Alpha5))
 				EndTimer ();
 		}
 	}
