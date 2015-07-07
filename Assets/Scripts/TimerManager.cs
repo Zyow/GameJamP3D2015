@@ -49,6 +49,7 @@ public class TimerManager : MonoBehaviour
 		ShowTimer ();
 		currentIntroTimer = introDuration;
 		audioManager = FindObjectOfType <AudioManager>();
+		StartIntro ();
 	}
 
 	private void ShowTimer ()

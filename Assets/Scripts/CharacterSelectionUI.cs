@@ -23,6 +23,8 @@ public class CharacterSelectionUI : MonoBehaviour
 
 	public int minPlayersNeed;
 
+	public bool canCheat;
+
 	void Start ()
 	{
 		//Instantiate (loadingPlayerPrefab);
@@ -34,6 +36,27 @@ public class CharacterSelectionUI : MonoBehaviour
 
 	void Update ()
 	{
+		if (canCheat)
+		{
+			if (Input.GetKeyDown(KeyCode.Alpha1))
+				ActivePlayer1 ();
+
+			if (Input.GetKeyDown(KeyCode.Alpha2))
+				ActivePlayer2 ();
+
+			if (Input.GetKeyDown(KeyCode.Alpha3))
+				ActivePlayer3 ();
+
+			if (Input.GetKeyDown(KeyCode.Alpha4))
+				ActivePlayer4 ();
+
+			if (Input.GetKeyDown (KeyCode.Return) && canLaunchGame)
+			{
+				Application.LoadLevel("SceneDef");
+				loadingPlayer.ActivePlayer ();
+			}
+		}
+
 		if (Input.GetButtonDown ("Jump Player 1"))
 			ActivePlayer1 ();
 
