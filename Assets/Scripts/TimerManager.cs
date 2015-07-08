@@ -4,6 +4,10 @@ using System.Collections;
 
 public class TimerManager : MonoBehaviour 
 {
+
+	public float rulesCount = 0f;
+
+
 	public Text textTimer;
 	public GameObject superRuleUI;
 
@@ -21,7 +25,7 @@ public class TimerManager : MonoBehaviour
 	public bool canCheat;
 	public bool isThereSuperRulesInTheGame;
 	
-	private float timerCurrent;
+	public float timerCurrent;
 	private float timerSuperRule;
 
 	private float currentSuperRuleDuration;
@@ -78,6 +82,16 @@ public class TimerManager : MonoBehaviour
 		textCurrentIntroTimer.gameObject.SetActive(false);
 	}
 
+	public void rulesplus()
+	{
+		rulesCount ++;
+
+		print (rulesCount);
+		
+		if (rulesCount == 13)
+			timerCurrent = 10f;
+	}
+
 	private void ShowTimer ()
 	{
 		var minutes = timerCurrent / 60; 
@@ -128,7 +142,7 @@ public class TimerManager : MonoBehaviour
 			Outro ();
 	}
 
-	private void Outro ()
+	public void Outro ()
 	{
 		ShowCurtains ();
 		introAnimator.SetTrigger ("onOutro");

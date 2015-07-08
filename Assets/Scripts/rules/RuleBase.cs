@@ -8,6 +8,7 @@ public class RuleBase : MonoBehaviour
 	public Action<int> winnerUI;
 	public bool done;
 
+
 	/// <summary>
 	/// Signaler si l'achievement est fini.
 	/// </summary>
@@ -15,6 +16,11 @@ public class RuleBase : MonoBehaviour
 	protected void Finished ( int player)
 	{
 		winner = player;
+
+		FindObjectOfType<TimerManager>().rulesplus();
+
+
+
 		if( winnerUI != null )
 			winnerUI( winner );
 	}
