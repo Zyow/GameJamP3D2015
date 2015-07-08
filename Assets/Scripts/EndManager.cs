@@ -106,7 +106,7 @@ public class EndManager : MonoBehaviour
 
 	public void ButtonReplay ()
 	{
-		Application.LoadLevel (Application.loadedLevel);
+		Application.LoadLevel ("SceneDef");
 	}
 
 	public void ButtonTitleScreen ()
