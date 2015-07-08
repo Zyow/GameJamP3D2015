@@ -61,7 +61,14 @@ public class TimerManager : MonoBehaviour
 
 	private void ShowTimer ()
 	{
-		textTimer.text = timerCurrent + " s";
+//		textTimer.text = timerCurrent + " s";
+
+		var minutes = timerCurrent / 60; 
+		var seconds = timerCurrent % 60;
+
+		textTimer.text = string.Format ("{0:00} : {1:00}", minutes, seconds);
+
+
 	}
 
 	private void NewSuperRule ()
