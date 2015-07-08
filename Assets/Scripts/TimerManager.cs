@@ -44,6 +44,11 @@ public class TimerManager : MonoBehaviour
 	public Renderer curtainG;
 	public Renderer curtainD;
 
+	public RuleScore ruleScorePlayer1;
+	public RuleScore ruleScorePlayer2;
+	public RuleScore ruleScorePlayer3;
+	public RuleScore ruleScorePlayer4;
+
 	void Awake () 
 	{
 		//introAnimator = curtains.GetComponent<Animator>();
@@ -57,18 +62,19 @@ public class TimerManager : MonoBehaviour
 		audioManager = FindObjectOfType <AudioManager>();
 		endManager = FindObjectOfType <EndManager>();
 		StartIntro ();
+
+		PlayerPrefs.SetInt("Player 1 Score", 0);
+		PlayerPrefs.SetInt("Player 2 Score", 0);
+		PlayerPrefs.SetInt("Player 3 Score", 0);
+		PlayerPrefs.SetInt("Player 4 Score", 0);
 	}
 
 	private void ShowTimer ()
 	{
-//		textTimer.text = timerCurrent + " s";
-
 		var minutes = timerCurrent / 60; 
 		var seconds = timerCurrent % 60;
 
 		textTimer.text = string.Format ("{0:00} : {1:00}", minutes, seconds);
-
-
 	}
 
 	private void NewSuperRule ()
@@ -133,15 +139,9 @@ public class TimerManager : MonoBehaviour
 
 	void Update ()
 	{
-		if (canCheat)
+		if (canCheat && Input.GetKeyDown (KeyCode.Alpha5))
 		{
-			//cheat
-			//if (Input.GetKeyDown (KeyCode.Alpha6))
-			//	StartIntro ();
-				//StartTimer ();
-			
-			if (Input.GetKeyDown (KeyCode.Alpha5))
-				EndTimer ();
+			EndTimer ();
 		}
 	}
 
@@ -202,8 +202,13 @@ public class TimerManager : MonoBehaviour
 		StopAllCoroutines ();
 		isASuperRuleIsActive = false;
 		superRuleUI.SetActive (isASuperRuleIsActive);
-		//Instantiate (endGameManager);
-		endManager.ActiveEnd ();
+		//endManager.ActiveEnd ();
 		HideCurtains ();
+
+		PlayerPrefs.SetInt("Player 1 Score", ruleScorePlayer1.score);
+		PlayerPrefs.SetInt("Player 2 Score", ruleScorePlayer2.score);
+		PlayerPrefs.SetInt("Player 3 Score", ruleScorePlayer3.score);
+		PlayerPrefs.SetInt("Player 4 Score", ruleScorePlayer4.score);
+		Application.LoadLevel ("Scene End");
 	}
 }
