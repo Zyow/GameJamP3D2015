@@ -49,9 +49,17 @@ public class TimerManager : MonoBehaviour
 	public RuleScore ruleScorePlayer3;
 	public RuleScore ruleScorePlayer4;
 
+	private PlayerMove[] playerMove;
+	private PlayerHit[] playerHit;
+	private PlayerStayXtime[] playerStay;
+
 	void Awake () 
 	{
 		//introAnimator = curtains.GetComponent<Animator>();
+		playerMove = FindObjectsOfType<PlayerMove>();
+		playerHit = FindObjectsOfType<PlayerHit>();
+		playerStay = FindObjectsOfType<PlayerStayXtime>();
+
 		timerCurrent = timerMax;
 		//textTimer = transform.GetChild(0).GetChild(0).GetComponent<Text>();
 		//superRuleUI = transform.GetChild(0).GetChild(1).gameObject;
@@ -182,6 +190,15 @@ public class TimerManager : MonoBehaviour
 
 	public void StartTimer ()
 	{
+		foreach (PlayerMove play in playerMove)
+			play.AllowMove();
+
+		foreach (PlayerHit hit in playerHit)
+			hit.AllowHit();
+
+		foreach (PlayerStayXtime pStay in playerStay)
+			pStay.AllowUseStay();
+
 		if (audioManager != null)
 			audioManager.GameLaunched ();
 

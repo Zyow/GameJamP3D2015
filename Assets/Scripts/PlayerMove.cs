@@ -12,7 +12,6 @@ public class PlayerMove : PlayerBase
 	public float jumpForce;
 	public Transform groundCheck;
 	public LayerMask whatIsGround;
-	private bool canMove = true;
 	private float horizontalInputSpeed;
 	private bool pushed = false;
 	private bool grounded = false;
@@ -26,6 +25,7 @@ public class PlayerMove : PlayerBase
 
 	private MyCharacterController myCharacterController;
 
+	private bool canMove = false;
 
 	protected override void Awake ()
 	{
@@ -36,31 +36,37 @@ public class PlayerMove : PlayerBase
 
 	void FixedUpdate ()
 	{
-		grounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, whatIsGround);
-
-		horizontalInputSpeed = Input.GetAxis("Horizontal Player "+playerString);
-		
-		if (!pushed)
-			myRigidbody.velocity = new Vector2(horizontalInputSpeed * speed, myRigidbody.velocity.y);
-
-
-		if (horizontalInputSpeed < -0.1)
-			transform.rotation = Quaternion.Euler(0f,-90f,0f);
-		else if (horizontalInputSpeed > 0.1)
-			transform.rotation = Quaternion.Euler(0f,90f,0f);
+		if (canMove)
+		{
+			grounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, whatIsGround);
+			
+			horizontalInputSpeed = Input.GetAxis("Horizontal Player "+playerString);
+			
+			if (!pushed)
+				myRigidbody.velocity = new Vector2(horizontalInputSpeed * speed, myRigidbody.velocity.y);
+			
+			
+			if (horizontalInputSpeed < -0.1)
+				transform.rotation = Quaternion.Euler(0f,-90f,0f);
+			else if (horizontalInputSpeed > 0.1)
+				transform.rotation = Quaternion.Euler(0f,90f,0f);
+		}
 		
 	}
 
 	void Update()
 	{
-		if (grounded && Input.GetButtonDown("Jump Player " + playerString))		
+		if (canMove)
 		{
-			myRigidbody.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
-			audioSource.PlayOneShot (jumpSFX);
-			
-			if (jumped != null)
+			if (grounded && Input.GetButtonDown("Jump Player " + playerString))		
 			{
-				jumped();
+				myRigidbody.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+				audioSource.PlayOneShot (jumpSFX);
+				
+				if (jumped != null)
+				{
+					jumped();
+				}
 			}
 		}
 	}
@@ -83,14 +89,23 @@ public class PlayerMove : PlayerBase
 
 	public void Pushed()
 	{
-		audioSource.PlayOneShot (pushedSFX);
-		pushed = true;
-		CancelInvoke();
-		Invoke("UnPushed",0.3f);
+		if (canMove)
+		{
+			audioSource.PlayOneShot (pushedSFX);
+			pushed = true;
+			CancelInvoke();
+			Invoke("UnPushed",0.3f);
+
+		}
 	}
 
 	public void UnPushed()
 	{
 		pushed = false;
+	}
+
+	public void AllowMove()
+	{
+		canMove = true;
 	}
 }

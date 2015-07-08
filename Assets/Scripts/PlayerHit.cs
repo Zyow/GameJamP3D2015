@@ -11,6 +11,8 @@ public class PlayerHit : PlayerBase
 
 	private Animator anim;
 
+	private bool canHit = false;
+
 	protected override void Awake ()
 	{
 		base.Awake();
@@ -28,16 +30,24 @@ public class PlayerHit : PlayerBase
 
 	private IEnumerator Attack ()
 	{
-		if (canAttack)
+		if(canHit)
 		{
-			canAttack = false;
-			attackPrefab.SetActive(true);
-			if (anim != null)
-				anim.SetTrigger("Hit");
+			if (canAttack)
+			{
+				canAttack = false;
+				attackPrefab.SetActive(true);
+				if (anim != null)
+					anim.SetTrigger("Hit");
+			}
+			yield return new WaitForSeconds(0.2f);
+			attackPrefab.SetActive(false);
+			canAttack = true;
 		}
-		yield return new WaitForSeconds(0.2f);
-		attackPrefab.SetActive(false);
-		canAttack = true;
 		
+	}
+
+	public void AllowHit()
+	{
+		canHit = true;
 	}
 }
