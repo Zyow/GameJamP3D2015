@@ -10,6 +10,11 @@ public class RuleManager : MonoBehaviour
 	void Awake()
 	{
 		rules = new List<RuleBase>(Resources.LoadAll<RuleBase>("Rules"));
+		ShowRules();
+	}
+
+	public void ShowRules()
+	{
 		foreach ( Transform pos in posUI)
 		{
 			int rdm = Random.Range(0,rules.Count);

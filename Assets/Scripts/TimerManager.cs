@@ -61,12 +61,13 @@ public class TimerManager : MonoBehaviour
 		currentIntroTimer = introDuration;
 		audioManager = FindObjectOfType <AudioManager>();
 		endManager = FindObjectOfType <EndManager>();
-		StartIntro ();
+//		StartIntro ();
 
 		PlayerPrefs.SetInt("Player 1 Score", 0);
 		PlayerPrefs.SetInt("Player 2 Score", 0);
 		PlayerPrefs.SetInt("Player 3 Score", 0);
 		PlayerPrefs.SetInt("Player 4 Score", 0);
+		textCurrentIntroTimer.gameObject.SetActive(false);
 	}
 
 	private void ShowTimer ()
@@ -155,6 +156,7 @@ public class TimerManager : MonoBehaviour
 
 	private void ShowTimerIntro ()
 	{
+		textCurrentIntroTimer.gameObject.SetActive(true);
 		if (currentIntroTimer > 0)
 			textCurrentIntroTimer.text = currentIntroTimer + "";
 		else 
