@@ -32,7 +32,10 @@ public class HitCollider : MonoBehaviour
 				col.GetComponent<BrokenableItem>().Damaged(transform.parent.tag);
 
 			if (col.GetComponent<ItemInflictDamage>())
+			{
 				col.GetComponent<ItemInflictDamage>().Damaged(transform.parent.tag);
+				col.GetComponentInParent<Rigidbody2D>().AddForce(transform.forward * 100f, ForceMode2D.Impulse);
+			}
 		}
 
 		if (col.tag != "Decors")
